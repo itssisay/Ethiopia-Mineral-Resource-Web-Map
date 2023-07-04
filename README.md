@@ -1,2 +1,2 @@
 # Ethiopia-Mineral-Resource-Web-Map
- A web nam showing known mineral deposits and occurrences of Ethiopia.
+ A web map showing know mineral deposits ans occurrences

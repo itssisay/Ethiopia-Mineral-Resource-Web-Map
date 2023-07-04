@@ -36,12 +36,18 @@
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
         <script src="data/Boundarylineapproximate_1.js"></script>
-        <script src="data/Minorenergyresources_2.js"></script>
-        <script src="data/Minorindustrialmineralresources_3.js"></script>
-        <script src="data/Minormetallicmineralresources_4.js"></script>
-        <script src="data/MajorEnergyResources_5.js"></script>
-        <script src="data/MajorIndustrialmineraldeposits_6.js"></script>
-        <script src="data/Majormetallicmineraldeposits_7.js"></script>
+        <script src="data/PrecambrianMetamorphicandAssociatedIntrusiveRocks_2.js"></script>
+        <script src="data/MesozoicMarineSedimentaryRocks_3.js"></script>
+        <script src="data/OligoceneMioceneVolcanicRocksandAssociatedSediments_4.js"></script>
+        <script src="data/MioceneQuaternaryVolcanicRocksandAssociatedSediments_5.js"></script>
+        <script src="data/EocenetoRecentSediments_6.js"></script>
+        <script src="data/LakesandReservoirs_7.js"></script>
+        <script src="data/Minorenergyresources_8.js"></script>
+        <script src="data/Minorindustrialmineralresources_9.js"></script>
+        <script src="data/Minormetallicmineralresources_10.js"></script>
+        <script src="data/MajorEnergyResources_11.js"></script>
+        <script src="data/MajorIndustrialmineraldeposits_12.js"></script>
+        <script src="data/Majormetallicmineraldeposits_13.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -962,7 +968,331 @@
         });
         bounds_group.addLayer(layer_Boundarylineapproximate_1);
         map.addLayer(layer_Boundarylineapproximate_1);
-        function pop_Minorenergyresources_2(feature, layer) {
+        function pop_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Group Name</th>\
+                        <td>' + (feature.properties['Group Name'] !== null ? autolinker.link(feature.properties['Group Name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2_0() {
+            return {
+                pane: 'pane_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(230,214,177,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2');
+        map.getPane('pane_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2').style.zIndex = 402;
+        map.getPane('pane_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2').style['mix-blend-mode'] = 'normal';
+        var layer_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2 = new L.geoJson(json_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2',
+            layerName: 'layer_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2',
+            pane: 'pane_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2',
+            onEachFeature: pop_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2,
+            style: style_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2_0,
+        });
+        bounds_group.addLayer(layer_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2);
+        map.addLayer(layer_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2);
+        function pop_MesozoicMarineSedimentaryRocks_3(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Group Name</th>\
+                        <td>' + (feature.properties['Group Name'] !== null ? autolinker.link(feature.properties['Group Name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_MesozoicMarineSedimentaryRocks_3_0() {
+            return {
+                pane: 'pane_MesozoicMarineSedimentaryRocks_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(106,164,216,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_MesozoicMarineSedimentaryRocks_3');
+        map.getPane('pane_MesozoicMarineSedimentaryRocks_3').style.zIndex = 403;
+        map.getPane('pane_MesozoicMarineSedimentaryRocks_3').style['mix-blend-mode'] = 'normal';
+        var layer_MesozoicMarineSedimentaryRocks_3 = new L.geoJson(json_MesozoicMarineSedimentaryRocks_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_MesozoicMarineSedimentaryRocks_3',
+            layerName: 'layer_MesozoicMarineSedimentaryRocks_3',
+            pane: 'pane_MesozoicMarineSedimentaryRocks_3',
+            onEachFeature: pop_MesozoicMarineSedimentaryRocks_3,
+            style: style_MesozoicMarineSedimentaryRocks_3_0,
+        });
+        bounds_group.addLayer(layer_MesozoicMarineSedimentaryRocks_3);
+        map.addLayer(layer_MesozoicMarineSedimentaryRocks_3);
+        function pop_OligoceneMioceneVolcanicRocksandAssociatedSediments_4(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Group Name</th>\
+                        <td>' + (feature.properties['Group Name'] !== null ? autolinker.link(feature.properties['Group Name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_OligoceneMioceneVolcanicRocksandAssociatedSediments_4_0() {
+            return {
+                pane: 'pane_OligoceneMioceneVolcanicRocksandAssociatedSediments_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(87,205,45,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_OligoceneMioceneVolcanicRocksandAssociatedSediments_4');
+        map.getPane('pane_OligoceneMioceneVolcanicRocksandAssociatedSediments_4').style.zIndex = 404;
+        map.getPane('pane_OligoceneMioceneVolcanicRocksandAssociatedSediments_4').style['mix-blend-mode'] = 'normal';
+        var layer_OligoceneMioceneVolcanicRocksandAssociatedSediments_4 = new L.geoJson(json_OligoceneMioceneVolcanicRocksandAssociatedSediments_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_OligoceneMioceneVolcanicRocksandAssociatedSediments_4',
+            layerName: 'layer_OligoceneMioceneVolcanicRocksandAssociatedSediments_4',
+            pane: 'pane_OligoceneMioceneVolcanicRocksandAssociatedSediments_4',
+            onEachFeature: pop_OligoceneMioceneVolcanicRocksandAssociatedSediments_4,
+            style: style_OligoceneMioceneVolcanicRocksandAssociatedSediments_4_0,
+        });
+        bounds_group.addLayer(layer_OligoceneMioceneVolcanicRocksandAssociatedSediments_4);
+        map.addLayer(layer_OligoceneMioceneVolcanicRocksandAssociatedSediments_4);
+        function pop_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Group Name</th>\
+                        <td>' + (feature.properties['Group Name'] !== null ? autolinker.link(feature.properties['Group Name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5_0() {
+            return {
+                pane: 'pane_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(195,202,60,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5');
+        map.getPane('pane_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5').style.zIndex = 405;
+        map.getPane('pane_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5').style['mix-blend-mode'] = 'normal';
+        var layer_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5 = new L.geoJson(json_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5',
+            layerName: 'layer_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5',
+            pane: 'pane_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5',
+            onEachFeature: pop_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5,
+            style: style_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5_0,
+        });
+        bounds_group.addLayer(layer_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5);
+        map.addLayer(layer_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5);
+        function pop_EocenetoRecentSediments_6(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Group Name</th>\
+                        <td>' + (feature.properties['Group Name'] !== null ? autolinker.link(feature.properties['Group Name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_EocenetoRecentSediments_6_0() {
+            return {
+                pane: 'pane_EocenetoRecentSediments_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(250,253,171,0.8666666666666667)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_EocenetoRecentSediments_6');
+        map.getPane('pane_EocenetoRecentSediments_6').style.zIndex = 406;
+        map.getPane('pane_EocenetoRecentSediments_6').style['mix-blend-mode'] = 'normal';
+        var layer_EocenetoRecentSediments_6 = new L.geoJson(json_EocenetoRecentSediments_6, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_EocenetoRecentSediments_6',
+            layerName: 'layer_EocenetoRecentSediments_6',
+            pane: 'pane_EocenetoRecentSediments_6',
+            onEachFeature: pop_EocenetoRecentSediments_6,
+            style: style_EocenetoRecentSediments_6_0,
+        });
+        bounds_group.addLayer(layer_EocenetoRecentSediments_6);
+        map.addLayer(layer_EocenetoRecentSediments_6);
+        function pop_LakesandReservoirs_7(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Name:</th>\
+                        <td>' + (feature.properties['name_en'] !== null ? autolinker.link(feature.properties['name_en'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_LakesandReservoirs_7_0() {
+            return {
+                pane: 'pane_LakesandReservoirs_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(199,249,243,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_LakesandReservoirs_7');
+        map.getPane('pane_LakesandReservoirs_7').style.zIndex = 407;
+        map.getPane('pane_LakesandReservoirs_7').style['mix-blend-mode'] = 'normal';
+        var layer_LakesandReservoirs_7 = new L.geoJson(json_LakesandReservoirs_7, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_LakesandReservoirs_7',
+            layerName: 'layer_LakesandReservoirs_7',
+            pane: 'pane_LakesandReservoirs_7',
+            onEachFeature: pop_LakesandReservoirs_7,
+            style: style_LakesandReservoirs_7_0,
+        });
+        bounds_group.addLayer(layer_LakesandReservoirs_7);
+        map.addLayer(layer_LakesandReservoirs_7);
+        function pop_Minorenergyresources_8(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -1011,11 +1341,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Minorenergyresources_2_0(feature) {
+        function style_Minorenergyresources_8_0(feature) {
             switch(String(feature.properties['Commodity'])) {
                 case 'Geothermal energy':
                     return {
-                pane: 'pane_Minorenergyresources_2',
+                pane: 'pane_Minorenergyresources_8',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
@@ -1031,7 +1361,7 @@
                     break;
                 case 'Lignite':
                     return {
-                pane: 'pane_Minorenergyresources_2',
+                pane: 'pane_Minorenergyresources_8',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
@@ -1047,7 +1377,7 @@
                     break;
                 case 'Oil & natural gas':
                     return {
-                pane: 'pane_Minorenergyresources_2',
+                pane: 'pane_Minorenergyresources_8',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
@@ -1063,7 +1393,7 @@
                     break;
                 case 'Uranium':
                     return {
-                pane: 'pane_Minorenergyresources_2',
+                pane: 'pane_Minorenergyresources_8',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
@@ -1079,27 +1409,27 @@
                     break;
             }
         }
-        map.createPane('pane_Minorenergyresources_2');
-        map.getPane('pane_Minorenergyresources_2').style.zIndex = 402;
-        map.getPane('pane_Minorenergyresources_2').style['mix-blend-mode'] = 'normal';
-        var layer_Minorenergyresources_2 = new L.geoJson(json_Minorenergyresources_2, {
+        map.createPane('pane_Minorenergyresources_8');
+        map.getPane('pane_Minorenergyresources_8').style.zIndex = 408;
+        map.getPane('pane_Minorenergyresources_8').style['mix-blend-mode'] = 'normal';
+        var layer_Minorenergyresources_8 = new L.geoJson(json_Minorenergyresources_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Minorenergyresources_2',
-            layerName: 'layer_Minorenergyresources_2',
-            pane: 'pane_Minorenergyresources_2',
-            onEachFeature: pop_Minorenergyresources_2,
+            dataVar: 'json_Minorenergyresources_8',
+            layerName: 'layer_Minorenergyresources_8',
+            pane: 'pane_Minorenergyresources_8',
+            onEachFeature: pop_Minorenergyresources_8,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Minorenergyresources_2_0(feature));
+                return L.circleMarker(latlng, style_Minorenergyresources_8_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Minorenergyresources_2);
-        map.addLayer(layer_Minorenergyresources_2);
-        function pop_Minorindustrialmineralresources_3(feature, layer) {
+        bounds_group.addLayer(layer_Minorenergyresources_8);
+        map.addLayer(layer_Minorenergyresources_8);
+        function pop_Minorindustrialmineralresources_9(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -1144,11 +1474,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Minorindustrialmineralresources_3_0(feature) {
+        function style_Minorindustrialmineralresources_9_0(feature) {
             switch(String(feature.properties['Commodity'])) {
                 case 'Asbestos':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1165,7 +1495,7 @@
                     break;
                 case 'Barite':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1182,7 +1512,7 @@
                     break;
                 case 'Common clay':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1199,7 +1529,7 @@
                     break;
                 case 'Common Salt':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1216,7 +1546,7 @@
                     break;
                 case 'Diatomite':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1233,7 +1563,7 @@
                     break;
                 case 'Dolomite':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1250,7 +1580,7 @@
                     break;
                 case 'Feldspar':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1267,7 +1597,7 @@
                     break;
                 case 'Granite':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1284,7 +1614,7 @@
                     break;
                 case 'Graphite':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1301,7 +1631,7 @@
                     break;
                 case 'Gypsum':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1318,7 +1648,7 @@
                     break;
                 case 'Kaolin':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1335,7 +1665,7 @@
                     break;
                 case 'Limestone':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1352,7 +1682,7 @@
                     break;
                 case 'Marble':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1369,7 +1699,7 @@
                     break;
                 case 'Mica':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1386,7 +1716,7 @@
                     break;
                 case 'Olivine':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1403,7 +1733,7 @@
                     break;
                 case 'Phosphate':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1420,7 +1750,7 @@
                     break;
                 case 'Pozzolana':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1437,7 +1767,7 @@
                     break;
                 case 'Quartz':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1454,7 +1784,7 @@
                     break;
                 case 'Silica sand':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1471,7 +1801,7 @@
                     break;
                 case 'Soda ash':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1488,7 +1818,7 @@
                     break;
                 case 'Sulfur':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1505,7 +1835,7 @@
                     break;
                 case 'Talc':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1522,7 +1852,7 @@
                     break;
                 case 'Travertine':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_3',
+                pane: 'pane_Minorindustrialmineralresources_9',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1539,27 +1869,27 @@
                     break;
             }
         }
-        map.createPane('pane_Minorindustrialmineralresources_3');
-        map.getPane('pane_Minorindustrialmineralresources_3').style.zIndex = 403;
-        map.getPane('pane_Minorindustrialmineralresources_3').style['mix-blend-mode'] = 'normal';
-        var layer_Minorindustrialmineralresources_3 = new L.geoJson(json_Minorindustrialmineralresources_3, {
+        map.createPane('pane_Minorindustrialmineralresources_9');
+        map.getPane('pane_Minorindustrialmineralresources_9').style.zIndex = 409;
+        map.getPane('pane_Minorindustrialmineralresources_9').style['mix-blend-mode'] = 'normal';
+        var layer_Minorindustrialmineralresources_9 = new L.geoJson(json_Minorindustrialmineralresources_9, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Minorindustrialmineralresources_3',
-            layerName: 'layer_Minorindustrialmineralresources_3',
-            pane: 'pane_Minorindustrialmineralresources_3',
-            onEachFeature: pop_Minorindustrialmineralresources_3,
+            dataVar: 'json_Minorindustrialmineralresources_9',
+            layerName: 'layer_Minorindustrialmineralresources_9',
+            pane: 'pane_Minorindustrialmineralresources_9',
+            onEachFeature: pop_Minorindustrialmineralresources_9,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_Minorindustrialmineralresources_3_0(feature));
+                return L.shapeMarker(latlng, style_Minorindustrialmineralresources_9_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Minorindustrialmineralresources_3);
-        map.addLayer(layer_Minorindustrialmineralresources_3);
-        function pop_Minormetallicmineralresources_4(feature, layer) {
+        bounds_group.addLayer(layer_Minorindustrialmineralresources_9);
+        map.addLayer(layer_Minorindustrialmineralresources_9);
+        function pop_Minormetallicmineralresources_10(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -1608,11 +1938,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Minormetallicmineralresources_4_0(feature) {
+        function style_Minormetallicmineralresources_10_0(feature) {
             switch(String(feature.properties['Commodity'])) {
                 case 'Au':
                     return {
-                pane: 'pane_Minormetallicmineralresources_4',
+                pane: 'pane_Minormetallicmineralresources_10',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1629,7 +1959,7 @@
                     break;
                 case 'Berilium':
                     return {
-                pane: 'pane_Minormetallicmineralresources_4',
+                pane: 'pane_Minormetallicmineralresources_10',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1646,7 +1976,7 @@
                     break;
                 case 'Chromite':
                     return {
-                pane: 'pane_Minormetallicmineralresources_4',
+                pane: 'pane_Minormetallicmineralresources_10',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1663,7 +1993,7 @@
                     break;
                 case 'Cobalt':
                     return {
-                pane: 'pane_Minormetallicmineralresources_4',
+                pane: 'pane_Minormetallicmineralresources_10',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1680,7 +2010,7 @@
                     break;
                 case 'Copper':
                     return {
-                pane: 'pane_Minormetallicmineralresources_4',
+                pane: 'pane_Minormetallicmineralresources_10',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1697,7 +2027,7 @@
                     break;
                 case 'Gold':
                     return {
-                pane: 'pane_Minormetallicmineralresources_4',
+                pane: 'pane_Minormetallicmineralresources_10',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1714,7 +2044,7 @@
                     break;
                 case 'Iron ore':
                     return {
-                pane: 'pane_Minormetallicmineralresources_4',
+                pane: 'pane_Minormetallicmineralresources_10',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1731,7 +2061,7 @@
                     break;
                 case 'Lead':
                     return {
-                pane: 'pane_Minormetallicmineralresources_4',
+                pane: 'pane_Minormetallicmineralresources_10',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1748,7 +2078,7 @@
                     break;
                 case 'Manganese':
                     return {
-                pane: 'pane_Minormetallicmineralresources_4',
+                pane: 'pane_Minormetallicmineralresources_10',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1765,7 +2095,7 @@
                     break;
                 case 'Molibdenite':
                     return {
-                pane: 'pane_Minormetallicmineralresources_4',
+                pane: 'pane_Minormetallicmineralresources_10',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1782,7 +2112,7 @@
                     break;
                 case 'Nickel':
                     return {
-                pane: 'pane_Minormetallicmineralresources_4',
+                pane: 'pane_Minormetallicmineralresources_10',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1799,7 +2129,7 @@
                     break;
                 case 'Niobium':
                     return {
-                pane: 'pane_Minormetallicmineralresources_4',
+                pane: 'pane_Minormetallicmineralresources_10',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1816,7 +2146,7 @@
                     break;
                 case 'Platinum':
                     return {
-                pane: 'pane_Minormetallicmineralresources_4',
+                pane: 'pane_Minormetallicmineralresources_10',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1833,7 +2163,7 @@
                     break;
                 case 'Pyrite':
                     return {
-                pane: 'pane_Minormetallicmineralresources_4',
+                pane: 'pane_Minormetallicmineralresources_10',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1850,7 +2180,7 @@
                     break;
                 case 'Silver':
                     return {
-                pane: 'pane_Minormetallicmineralresources_4',
+                pane: 'pane_Minormetallicmineralresources_10',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1867,7 +2197,7 @@
                     break;
                 case 'Titanium':
                     return {
-                pane: 'pane_Minormetallicmineralresources_4',
+                pane: 'pane_Minormetallicmineralresources_10',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1884,7 +2214,7 @@
                     break;
                 case 'Tungsten':
                     return {
-                pane: 'pane_Minormetallicmineralresources_4',
+                pane: 'pane_Minormetallicmineralresources_10',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1901,7 +2231,7 @@
                     break;
                 case 'Zinc':
                     return {
-                pane: 'pane_Minormetallicmineralresources_4',
+                pane: 'pane_Minormetallicmineralresources_10',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1918,27 +2248,27 @@
                     break;
             }
         }
-        map.createPane('pane_Minormetallicmineralresources_4');
-        map.getPane('pane_Minormetallicmineralresources_4').style.zIndex = 404;
-        map.getPane('pane_Minormetallicmineralresources_4').style['mix-blend-mode'] = 'normal';
-        var layer_Minormetallicmineralresources_4 = new L.geoJson(json_Minormetallicmineralresources_4, {
+        map.createPane('pane_Minormetallicmineralresources_10');
+        map.getPane('pane_Minormetallicmineralresources_10').style.zIndex = 410;
+        map.getPane('pane_Minormetallicmineralresources_10').style['mix-blend-mode'] = 'normal';
+        var layer_Minormetallicmineralresources_10 = new L.geoJson(json_Minormetallicmineralresources_10, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Minormetallicmineralresources_4',
-            layerName: 'layer_Minormetallicmineralresources_4',
-            pane: 'pane_Minormetallicmineralresources_4',
-            onEachFeature: pop_Minormetallicmineralresources_4,
+            dataVar: 'json_Minormetallicmineralresources_10',
+            layerName: 'layer_Minormetallicmineralresources_10',
+            pane: 'pane_Minormetallicmineralresources_10',
+            onEachFeature: pop_Minormetallicmineralresources_10,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_Minormetallicmineralresources_4_0(feature));
+                return L.shapeMarker(latlng, style_Minormetallicmineralresources_10_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Minormetallicmineralresources_4);
-        map.addLayer(layer_Minormetallicmineralresources_4);
-        function pop_MajorEnergyResources_5(feature, layer) {
+        bounds_group.addLayer(layer_Minormetallicmineralresources_10);
+        map.addLayer(layer_Minormetallicmineralresources_10);
+        function pop_MajorEnergyResources_11(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -1999,11 +2329,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_MajorEnergyResources_5_0(feature) {
+        function style_MajorEnergyResources_11_0(feature) {
             switch(String(feature.properties['q2wHide_Name'])) {
                 case 'Geothermal energy':
                     return {
-                pane: 'pane_MajorEnergyResources_5',
+                pane: 'pane_MajorEnergyResources_11',
                 radius: 8.0,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
@@ -2019,7 +2349,7 @@
                     break;
                 case 'Natural gas':
                     return {
-                pane: 'pane_MajorEnergyResources_5',
+                pane: 'pane_MajorEnergyResources_11',
                 radius: 8.0,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
@@ -2035,27 +2365,27 @@
                     break;
             }
         }
-        map.createPane('pane_MajorEnergyResources_5');
-        map.getPane('pane_MajorEnergyResources_5').style.zIndex = 405;
-        map.getPane('pane_MajorEnergyResources_5').style['mix-blend-mode'] = 'normal';
-        var layer_MajorEnergyResources_5 = new L.geoJson(json_MajorEnergyResources_5, {
+        map.createPane('pane_MajorEnergyResources_11');
+        map.getPane('pane_MajorEnergyResources_11').style.zIndex = 411;
+        map.getPane('pane_MajorEnergyResources_11').style['mix-blend-mode'] = 'normal';
+        var layer_MajorEnergyResources_11 = new L.geoJson(json_MajorEnergyResources_11, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_MajorEnergyResources_5',
-            layerName: 'layer_MajorEnergyResources_5',
-            pane: 'pane_MajorEnergyResources_5',
-            onEachFeature: pop_MajorEnergyResources_5,
+            dataVar: 'json_MajorEnergyResources_11',
+            layerName: 'layer_MajorEnergyResources_11',
+            pane: 'pane_MajorEnergyResources_11',
+            onEachFeature: pop_MajorEnergyResources_11,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_MajorEnergyResources_5_0(feature));
+                return L.circleMarker(latlng, style_MajorEnergyResources_11_0(feature));
             },
         });
-        bounds_group.addLayer(layer_MajorEnergyResources_5);
-        map.addLayer(layer_MajorEnergyResources_5);
-        function pop_MajorIndustrialmineraldeposits_6(feature, layer) {
+        bounds_group.addLayer(layer_MajorEnergyResources_11);
+        map.addLayer(layer_MajorEnergyResources_11);
+        function pop_MajorIndustrialmineraldeposits_12(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -2116,11 +2446,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_MajorIndustrialmineraldeposits_6_0(feature) {
+        function style_MajorIndustrialmineraldeposits_12_0(feature) {
             switch(String(feature.properties['Commodity'])) {
                 case 'Bentonite':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_6',
+                pane: 'pane_MajorIndustrialmineraldeposits_12',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2137,7 +2467,7 @@
                     break;
                 case 'Common clay':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_6',
+                pane: 'pane_MajorIndustrialmineraldeposits_12',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2154,7 +2484,7 @@
                     break;
                 case 'Diatomite':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_6',
+                pane: 'pane_MajorIndustrialmineraldeposits_12',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2171,7 +2501,7 @@
                     break;
                 case 'Gem stones':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_6',
+                pane: 'pane_MajorIndustrialmineraldeposits_12',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2188,7 +2518,7 @@
                     break;
                 case 'Granite':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_6',
+                pane: 'pane_MajorIndustrialmineraldeposits_12',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2205,7 +2535,7 @@
                     break;
                 case 'Graphite':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_6',
+                pane: 'pane_MajorIndustrialmineraldeposits_12',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2222,7 +2552,7 @@
                     break;
                 case 'Gypsum':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_6',
+                pane: 'pane_MajorIndustrialmineraldeposits_12',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2239,7 +2569,7 @@
                     break;
                 case 'Kyanite':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_6',
+                pane: 'pane_MajorIndustrialmineraldeposits_12',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2256,7 +2586,7 @@
                     break;
                 case 'Limestone':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_6',
+                pane: 'pane_MajorIndustrialmineraldeposits_12',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2273,7 +2603,7 @@
                     break;
                 case 'Marble':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_6',
+                pane: 'pane_MajorIndustrialmineraldeposits_12',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2290,7 +2620,7 @@
                     break;
                 case 'Potash':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_6',
+                pane: 'pane_MajorIndustrialmineraldeposits_12',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2307,7 +2637,7 @@
                     break;
                 case 'Quartz':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_6',
+                pane: 'pane_MajorIndustrialmineraldeposits_12',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2324,7 +2654,7 @@
                     break;
                 case 'Salt':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_6',
+                pane: 'pane_MajorIndustrialmineraldeposits_12',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2341,7 +2671,7 @@
                     break;
                 case 'Silica sand':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_6',
+                pane: 'pane_MajorIndustrialmineraldeposits_12',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2358,7 +2688,7 @@
                     break;
                 case 'Soda ash':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_6',
+                pane: 'pane_MajorIndustrialmineraldeposits_12',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2375,7 +2705,7 @@
                     break;
                 case 'Sulfur':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_6',
+                pane: 'pane_MajorIndustrialmineraldeposits_12',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2392,27 +2722,27 @@
                     break;
             }
         }
-        map.createPane('pane_MajorIndustrialmineraldeposits_6');
-        map.getPane('pane_MajorIndustrialmineraldeposits_6').style.zIndex = 406;
-        map.getPane('pane_MajorIndustrialmineraldeposits_6').style['mix-blend-mode'] = 'normal';
-        var layer_MajorIndustrialmineraldeposits_6 = new L.geoJson(json_MajorIndustrialmineraldeposits_6, {
+        map.createPane('pane_MajorIndustrialmineraldeposits_12');
+        map.getPane('pane_MajorIndustrialmineraldeposits_12').style.zIndex = 412;
+        map.getPane('pane_MajorIndustrialmineraldeposits_12').style['mix-blend-mode'] = 'normal';
+        var layer_MajorIndustrialmineraldeposits_12 = new L.geoJson(json_MajorIndustrialmineraldeposits_12, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_MajorIndustrialmineraldeposits_6',
-            layerName: 'layer_MajorIndustrialmineraldeposits_6',
-            pane: 'pane_MajorIndustrialmineraldeposits_6',
-            onEachFeature: pop_MajorIndustrialmineraldeposits_6,
+            dataVar: 'json_MajorIndustrialmineraldeposits_12',
+            layerName: 'layer_MajorIndustrialmineraldeposits_12',
+            pane: 'pane_MajorIndustrialmineraldeposits_12',
+            onEachFeature: pop_MajorIndustrialmineraldeposits_12,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_MajorIndustrialmineraldeposits_6_0(feature));
+                return L.shapeMarker(latlng, style_MajorIndustrialmineraldeposits_12_0(feature));
             },
         });
-        bounds_group.addLayer(layer_MajorIndustrialmineraldeposits_6);
-        map.addLayer(layer_MajorIndustrialmineraldeposits_6);
-        function pop_Majormetallicmineraldeposits_7(feature, layer) {
+        bounds_group.addLayer(layer_MajorIndustrialmineraldeposits_12);
+        map.addLayer(layer_MajorIndustrialmineraldeposits_12);
+        function pop_Majormetallicmineraldeposits_13(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -2473,11 +2803,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Majormetallicmineraldeposits_7_0(feature) {
+        function style_Majormetallicmineraldeposits_13_0(feature) {
             switch(String(feature.properties['Commodity'])) {
                 case 'Gold':
                     return {
-                pane: 'pane_Majormetallicmineraldeposits_7',
+                pane: 'pane_Majormetallicmineraldeposits_13',
                 shape: 'diamond',
                 radius: 9.2,
                 opacity: 1,
@@ -2494,7 +2824,7 @@
                     break;
                 case 'Iron ore':
                     return {
-                pane: 'pane_Majormetallicmineraldeposits_7',
+                pane: 'pane_Majormetallicmineraldeposits_13',
                 shape: 'diamond',
                 radius: 9.2,
                 opacity: 1,
@@ -2511,7 +2841,7 @@
                     break;
                 case 'Manganese':
                     return {
-                pane: 'pane_Majormetallicmineraldeposits_7',
+                pane: 'pane_Majormetallicmineraldeposits_13',
                 shape: 'diamond',
                 radius: 9.2,
                 opacity: 1,
@@ -2528,7 +2858,7 @@
                     break;
                 case 'Nickel':
                     return {
-                pane: 'pane_Majormetallicmineraldeposits_7',
+                pane: 'pane_Majormetallicmineraldeposits_13',
                 shape: 'diamond',
                 radius: 9.2,
                 opacity: 1,
@@ -2545,7 +2875,7 @@
                     break;
                 case 'Platinum':
                     return {
-                pane: 'pane_Majormetallicmineraldeposits_7',
+                pane: 'pane_Majormetallicmineraldeposits_13',
                 shape: 'diamond',
                 radius: 9.2,
                 opacity: 1,
@@ -2562,7 +2892,7 @@
                     break;
                 case 'Silver':
                     return {
-                pane: 'pane_Majormetallicmineraldeposits_7',
+                pane: 'pane_Majormetallicmineraldeposits_13',
                 shape: 'diamond',
                 radius: 9.2,
                 opacity: 1,
@@ -2579,7 +2909,7 @@
                     break;
                 case 'Tantalum':
                     return {
-                pane: 'pane_Majormetallicmineraldeposits_7',
+                pane: 'pane_Majormetallicmineraldeposits_13',
                 shape: 'diamond',
                 radius: 9.2,
                 opacity: 1,
@@ -2596,26 +2926,26 @@
                     break;
             }
         }
-        map.createPane('pane_Majormetallicmineraldeposits_7');
-        map.getPane('pane_Majormetallicmineraldeposits_7').style.zIndex = 407;
-        map.getPane('pane_Majormetallicmineraldeposits_7').style['mix-blend-mode'] = 'normal';
-        var layer_Majormetallicmineraldeposits_7 = new L.geoJson(json_Majormetallicmineraldeposits_7, {
+        map.createPane('pane_Majormetallicmineraldeposits_13');
+        map.getPane('pane_Majormetallicmineraldeposits_13').style.zIndex = 413;
+        map.getPane('pane_Majormetallicmineraldeposits_13').style['mix-blend-mode'] = 'normal';
+        var layer_Majormetallicmineraldeposits_13 = new L.geoJson(json_Majormetallicmineraldeposits_13, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Majormetallicmineraldeposits_7',
-            layerName: 'layer_Majormetallicmineraldeposits_7',
-            pane: 'pane_Majormetallicmineraldeposits_7',
-            onEachFeature: pop_Majormetallicmineraldeposits_7,
+            dataVar: 'json_Majormetallicmineraldeposits_13',
+            layerName: 'layer_Majormetallicmineraldeposits_13',
+            pane: 'pane_Majormetallicmineraldeposits_13',
+            onEachFeature: pop_Majormetallicmineraldeposits_13,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_Majormetallicmineraldeposits_7_0(feature));
+                return L.shapeMarker(latlng, style_Majormetallicmineraldeposits_13_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Majormetallicmineraldeposits_7);
-        map.addLayer(layer_Majormetallicmineraldeposits_7);
+        bounds_group.addLayer(layer_Majormetallicmineraldeposits_13);
+        map.addLayer(layer_Majormetallicmineraldeposits_13);
             var title = new L.Control();
             title.onAdd = function (map) {
                 this._div = L.DomUtil.create('div', 'info');
@@ -2644,7 +2974,7 @@
                 abstract.show = function () {
                     this._div.classList.remove("abstract");
                     this._div.classList.add("abstractUncollapsed");
-                    this._div.innerHTML = '	This map was prepared using data from one scientific publication and one published booklet. The data is used as received, without any modification other than regrouping for the purpose of presentation. There could be some errors on a number of mineral resource locations. A more refined, upto date and informative version will be presented when additional data becomes available. <br /><br />Sources used for this map are:<br />-Tadesse, S., Milesi, J., Deschamps, Y. 2003. Geology and mineral potential of Ethiopia: a note on the geology and mineral map of Ethiopia. Journal of African Earth Sciences, 36:273-313<br />-Mengistu, T. and Fentaw, H., 2003. Industrial Minerals and Rocks Resources Potential of Ethiopia. 66pp.<br /><br />For any comments, updates or to provide supplimentary information please contact me at sisaygeo@gmail.com<br /><br />Note: You can de-select the ones you don\'t want to see so that you can see each category separately.<br />	 Class A: Very large deposit; B: large deposit; C: medium deposit; D: small deposit; E: occurrence; 	N/A: no information available.<br />';
+                    this._div.innerHTML = '	This map was prepared using data from one scientific publication and one published booklet. The data is used as received, without any modification other than regrouping for the purpose of presentation. There could be some errors on a number of mineral resource locations. A more refined, upto date and informative version will be presented when additional data becomes available. <br /><br />Sources used for this map are:<br />-Tadesse, S., Milesi, J., Deschamps, Y. 2003. Geology and mineral potential of Ethiopia: a note on the geology and mineral map of Ethiopia. Journal of African Earth Sciences, 36:273-313<br />-Mengistu, T. and Fentaw, H., 2003. Industrial Minerals and Rocks Resources Potential of Ethiopia. 66pp.<br />-GSE, Generalized Geological Map of Ethiopia.<br /><br />For any comments, updates or to provide supplimentary information please contact me at sisaygeo@gmail.com<br /><br />Note: You can de-select the ones you don\'t want to see so that you can see each category separately.<br />	 Class A: Very large deposit; B: large deposit; C: medium deposit; D: small deposit; E: occurrence; 	N/A: no information available.<br />';
             };
             abstract.addTo(map);
         var osmGeocoder = new L.Control.Geocoder({
@@ -2658,7 +2988,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'Major metallic mineral deposits<br /><table><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_7_Gold0.png" /></td><td>Gold</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_7_Ironore1.png" /></td><td>Iron ore</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_7_Manganese2.png" /></td><td>Manganese</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_7_Nickel3.png" /></td><td>Nickel</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_7_Platinum4.png" /></td><td>Platinum</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_7_Silver5.png" /></td><td>Silver</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_7_Tantalum6.png" /></td><td>Tantalum</td></tr></table>': layer_Majormetallicmineraldeposits_7,'Major Industrial mineral deposits<br /><table><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_6_Bentonite0.png" /></td><td>Bentonite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_6_Commonclay1.png" /></td><td>Common clay</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_6_Diatomite2.png" /></td><td>Diatomite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_6_Gemstones3.png" /></td><td>Gem stones</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_6_Granite4.png" /></td><td>Granite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_6_Graphite5.png" /></td><td>Graphite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_6_Gypsum6.png" /></td><td>Gypsum</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_6_Kyanite7.png" /></td><td>Kyanite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_6_Limestone8.png" /></td><td>Limestone</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_6_Marble9.png" /></td><td>Marble</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_6_Potash10.png" /></td><td>Potash</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_6_Quartz11.png" /></td><td>Quartz</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_6_Salt12.png" /></td><td>Salt</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_6_Silicasand13.png" /></td><td>Silica sand</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_6_Sodaash14.png" /></td><td>Soda ash</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_6_Sulfur15.png" /></td><td>Sulfur</td></tr></table>': layer_MajorIndustrialmineraldeposits_6,'Major Energy Resources<br /><table><tr><td style="text-align: center;"><img src="legend/MajorEnergyResources_5_Geothermalenergy0.png" /></td><td>Geothermal energy</td></tr><tr><td style="text-align: center;"><img src="legend/MajorEnergyResources_5_Naturalgas1.png" /></td><td>Natural gas</td></tr></table>': layer_MajorEnergyResources_5,'Minor metallic mineral resources<br /><table><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Au0.png" /></td><td>Au</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Berilium1.png" /></td><td>Berilium</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Chromite2.png" /></td><td>Chromite</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Cobalt3.png" /></td><td>Cobalt</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Copper4.png" /></td><td>Copper</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Gold5.png" /></td><td>Gold</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Ironore6.png" /></td><td>Iron ore</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Lead7.png" /></td><td>Lead</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Manganese8.png" /></td><td>Manganese</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Molibdenite9.png" /></td><td>Molibdenite</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Nickel10.png" /></td><td>Nickel</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Niobium11.png" /></td><td>Niobium</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Platinum12.png" /></td><td>Platinum</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Pyrite13.png" /></td><td>Pyrite</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Silver14.png" /></td><td>Silver</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Titanium15.png" /></td><td>Titanium</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Tungsten16.png" /></td><td>Tungsten</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Zinc17.png" /></td><td>Zinc</td></tr></table>': layer_Minormetallicmineralresources_4,'Minor - industrial-mineral-resources<br /><table><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Asbestos0.png" /></td><td>Asbestos</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Barite1.png" /></td><td>Barite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Commonclay2.png" /></td><td>Common clay</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_CommonSalt3.png" /></td><td>Common Salt</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Diatomite4.png" /></td><td>Diatomite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Dolomite5.png" /></td><td>Dolomite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Feldspar6.png" /></td><td>Feldspar</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Granite7.png" /></td><td>Granite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Graphite8.png" /></td><td>Graphite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Gypsum9.png" /></td><td>Gypsum</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Kaolin10.png" /></td><td>Kaolin</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Limestone11.png" /></td><td>Limestone</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Marble12.png" /></td><td>Marble</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Mica13.png" /></td><td>Mica</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Olivine14.png" /></td><td>Olivine</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Phosphate15.png" /></td><td>Phosphate</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Pozzolana16.png" /></td><td>Pozzolana</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Quartz17.png" /></td><td>Quartz</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Silicasand18.png" /></td><td>Silica sand</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Sodaash19.png" /></td><td>Soda ash</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Sulfur20.png" /></td><td>Sulfur</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Talc21.png" /></td><td>Talc</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Travertine22.png" /></td><td>Travertine</td></tr></table>': layer_Minorindustrialmineralresources_3,'Minor - energy resources<br /><table><tr><td style="text-align: center;"><img src="legend/Minorenergyresources_2_Geothermalenergy0.png" /></td><td>Geothermal energy</td></tr><tr><td style="text-align: center;"><img src="legend/Minorenergyresources_2_Lignite1.png" /></td><td>Lignite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorenergyresources_2_Oilnaturalgas2.png" /></td><td>Oil & natural gas</td></tr><tr><td style="text-align: center;"><img src="legend/Minorenergyresources_2_Uranium3.png" /></td><td>Uranium</td></tr></table>': layer_Minorenergyresources_2,'<img src="legend/Boundarylineapproximate_1.png" /> Boundary line (approximate)': layer_Boundarylineapproximate_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
+        L.control.layers(baseMaps,{'Major metallic mineral deposits<br /><table><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_13_Gold0.png" /></td><td>Gold</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_13_Ironore1.png" /></td><td>Iron ore</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_13_Manganese2.png" /></td><td>Manganese</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_13_Nickel3.png" /></td><td>Nickel</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_13_Platinum4.png" /></td><td>Platinum</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_13_Silver5.png" /></td><td>Silver</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_13_Tantalum6.png" /></td><td>Tantalum</td></tr></table>': layer_Majormetallicmineraldeposits_13,'Major Industrial mineral deposits<br /><table><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Bentonite0.png" /></td><td>Bentonite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Commonclay1.png" /></td><td>Common clay</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Diatomite2.png" /></td><td>Diatomite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Gemstones3.png" /></td><td>Gem stones</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Granite4.png" /></td><td>Granite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Graphite5.png" /></td><td>Graphite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Gypsum6.png" /></td><td>Gypsum</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Kyanite7.png" /></td><td>Kyanite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Limestone8.png" /></td><td>Limestone</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Marble9.png" /></td><td>Marble</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Potash10.png" /></td><td>Potash</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Quartz11.png" /></td><td>Quartz</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Salt12.png" /></td><td>Salt</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Silicasand13.png" /></td><td>Silica sand</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Sodaash14.png" /></td><td>Soda ash</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Sulfur15.png" /></td><td>Sulfur</td></tr></table>': layer_MajorIndustrialmineraldeposits_12,'Major Energy Resources<br /><table><tr><td style="text-align: center;"><img src="legend/MajorEnergyResources_11_Geothermalenergy0.png" /></td><td>Geothermal energy</td></tr><tr><td style="text-align: center;"><img src="legend/MajorEnergyResources_11_Naturalgas1.png" /></td><td>Natural gas</td></tr></table>': layer_MajorEnergyResources_11,'Minor metallic mineral resources<br /><table><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Au0.png" /></td><td>Au</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Berilium1.png" /></td><td>Berilium</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Chromite2.png" /></td><td>Chromite</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Cobalt3.png" /></td><td>Cobalt</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Copper4.png" /></td><td>Copper</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Gold5.png" /></td><td>Gold</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Ironore6.png" /></td><td>Iron ore</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Lead7.png" /></td><td>Lead</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Manganese8.png" /></td><td>Manganese</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Molibdenite9.png" /></td><td>Molibdenite</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Nickel10.png" /></td><td>Nickel</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Niobium11.png" /></td><td>Niobium</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Platinum12.png" /></td><td>Platinum</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Pyrite13.png" /></td><td>Pyrite</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Silver14.png" /></td><td>Silver</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Titanium15.png" /></td><td>Titanium</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Tungsten16.png" /></td><td>Tungsten</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Zinc17.png" /></td><td>Zinc</td></tr></table>': layer_Minormetallicmineralresources_10,'Minor - industrial-mineral-resources<br /><table><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Asbestos0.png" /></td><td>Asbestos</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Barite1.png" /></td><td>Barite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Commonclay2.png" /></td><td>Common clay</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_CommonSalt3.png" /></td><td>Common Salt</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Diatomite4.png" /></td><td>Diatomite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Dolomite5.png" /></td><td>Dolomite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Feldspar6.png" /></td><td>Feldspar</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Granite7.png" /></td><td>Granite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Graphite8.png" /></td><td>Graphite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Gypsum9.png" /></td><td>Gypsum</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Kaolin10.png" /></td><td>Kaolin</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Limestone11.png" /></td><td>Limestone</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Marble12.png" /></td><td>Marble</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Mica13.png" /></td><td>Mica</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Olivine14.png" /></td><td>Olivine</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Phosphate15.png" /></td><td>Phosphate</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Pozzolana16.png" /></td><td>Pozzolana</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Quartz17.png" /></td><td>Quartz</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Silicasand18.png" /></td><td>Silica sand</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Sodaash19.png" /></td><td>Soda ash</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Sulfur20.png" /></td><td>Sulfur</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Talc21.png" /></td><td>Talc</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Travertine22.png" /></td><td>Travertine</td></tr></table>': layer_Minorindustrialmineralresources_9,'Minor - energy resources<br /><table><tr><td style="text-align: center;"><img src="legend/Minorenergyresources_8_Geothermalenergy0.png" /></td><td>Geothermal energy</td></tr><tr><td style="text-align: center;"><img src="legend/Minorenergyresources_8_Lignite1.png" /></td><td>Lignite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorenergyresources_8_Oilnaturalgas2.png" /></td><td>Oil & natural gas</td></tr><tr><td style="text-align: center;"><img src="legend/Minorenergyresources_8_Uranium3.png" /></td><td>Uranium</td></tr></table>': layer_Minorenergyresources_8,'<img src="legend/LakesandReservoirs_7.png" /> Lakes and Reservoirs': layer_LakesandReservoirs_7,'<img src="legend/EocenetoRecentSediments_6.png" /> Eocene to Recent Sediments': layer_EocenetoRecentSediments_6,'<img src="legend/MioceneQuaternaryVolcanicRocksandAssociatedSediments_5.png" /> Miocene - Quaternary Volcanic Rocks and Associated Sediments': layer_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5,'<img src="legend/OligoceneMioceneVolcanicRocksandAssociatedSediments_4.png" /> Oligocene - Miocene Volcanic Rocks and Associated Sediments': layer_OligoceneMioceneVolcanicRocksandAssociatedSediments_4,'<img src="legend/MesozoicMarineSedimentaryRocks_3.png" /> Mesozoic Marine Sedimentary Rocks': layer_MesozoicMarineSedimentaryRocks_3,'<img src="legend/PrecambrianMetamorphicandAssociatedIntrusiveRocks_2.png" /> Precambrian Metamorphic and Associated Intrusive Rocks': layer_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2,'<img src="legend/Boundarylineapproximate_1.png" /> Boundary line (approximate)': layer_Boundarylineapproximate_1,"OSM Standard": layer_OSMStandard_0,},{collapsed:false}).addTo(map);
         setBounds();
         </script>
     </body>
