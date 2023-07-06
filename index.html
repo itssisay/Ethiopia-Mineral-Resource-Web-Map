@@ -35,19 +35,13 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/Boundarylineapproximate_1.js"></script>
-        <script src="data/PrecambrianMetamorphicandAssociatedIntrusiveRocks_2.js"></script>
-        <script src="data/MesozoicMarineSedimentaryRocks_3.js"></script>
-        <script src="data/OligoceneMioceneVolcanicRocksandAssociatedSediments_4.js"></script>
-        <script src="data/MioceneQuaternaryVolcanicRocksandAssociatedSediments_5.js"></script>
-        <script src="data/EocenetoRecentSediments_6.js"></script>
-        <script src="data/LakesandReservoirs_7.js"></script>
-        <script src="data/Minorenergyresources_8.js"></script>
-        <script src="data/Minorindustrialmineralresources_9.js"></script>
-        <script src="data/Minormetallicmineralresources_10.js"></script>
-        <script src="data/MajorEnergyResources_11.js"></script>
-        <script src="data/MajorIndustrialmineraldeposits_12.js"></script>
-        <script src="data/Majormetallicmineraldeposits_13.js"></script>
+        <script src="data/GeologcalMap_1.js"></script>
+        <script src="data/Minorenergyresources_2.js"></script>
+        <script src="data/Minorindustrialmineralresources_3.js"></script>
+        <script src="data/Minormetallicmineralresources_4.js"></script>
+        <script src="data/MajorIndustrialmineraldeposits_5.js"></script>
+        <script src="data/MajorEnergyResources_6.js"></script>
+        <script src="data/Majormetallicmineraldeposits_7.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -67,7 +61,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        })
+        }).fitBounds([[3.3802905787002384,33.453758057162204],[15.452025393699342,50.676483413007176]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -86,9 +80,6 @@
         .className += ' fas fa-ruler';
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
-            if (bounds_group.getLayers().length) {
-                map.fitBounds(bounds_group.getBounds());
-            }
             map.setMaxBounds(map.getBounds());
         }
         map.createPane('pane_OSMStandard_0');
@@ -104,7 +95,7 @@
         });
         layer_OSMStandard_0;
         map.addLayer(layer_OSMStandard_0);
-        function pop_Boundarylineapproximate_1(feature, layer) {
+        function pop_GeologcalMap_1(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -122,1177 +113,136 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['official_name:am'] !== null ? autolinker.link(feature.properties['official_name:am'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['official_name:als'] !== null ? autolinker.link(feature.properties['official_name:als'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['official_name:af'] !== null ? autolinker.link(feature.properties['official_name:af'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['official_name:ady'] !== null ? autolinker.link(feature.properties['official_name:ady'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['official_name'] !== null ? autolinker.link(feature.properties['official_name'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:zu'] !== null ? autolinker.link(feature.properties['name:zu'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:zh_pinyin'] !== null ? autolinker.link(feature.properties['name:zh_pinyin'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:zh-Hant'] !== null ? autolinker.link(feature.properties['name:zh-Hant'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:zh-Hans'] !== null ? autolinker.link(feature.properties['name:zh-Hans'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:zh'] !== null ? autolinker.link(feature.properties['name:zh'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:zea'] !== null ? autolinker.link(feature.properties['name:zea'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:za'] !== null ? autolinker.link(feature.properties['name:za'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:yue'] !== null ? autolinker.link(feature.properties['name:yue'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:yo'] !== null ? autolinker.link(feature.properties['name:yo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:yi'] !== null ? autolinker.link(feature.properties['name:yi'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:xmf'] !== null ? autolinker.link(feature.properties['name:xmf'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:xh'] !== null ? autolinker.link(feature.properties['name:xh'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:xal'] !== null ? autolinker.link(feature.properties['name:xal'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:wuu'] !== null ? autolinker.link(feature.properties['name:wuu'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:wo'] !== null ? autolinker.link(feature.properties['name:wo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:war'] !== null ? autolinker.link(feature.properties['name:war'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:wa'] !== null ? autolinker.link(feature.properties['name:wa'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:vro'] !== null ? autolinker.link(feature.properties['name:vro'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:vo'] !== null ? autolinker.link(feature.properties['name:vo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:vi'] !== null ? autolinker.link(feature.properties['name:vi'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:vep'] !== null ? autolinker.link(feature.properties['name:vep'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:vec'] !== null ? autolinker.link(feature.properties['name:vec'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:uz'] !== null ? autolinker.link(feature.properties['name:uz'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ur'] !== null ? autolinker.link(feature.properties['name:ur'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:uk'] !== null ? autolinker.link(feature.properties['name:uk'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ug'] !== null ? autolinker.link(feature.properties['name:ug'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:tzl'] !== null ? autolinker.link(feature.properties['name:tzl'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:tt'] !== null ? autolinker.link(feature.properties['name:tt'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ts'] !== null ? autolinker.link(feature.properties['name:ts'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:tr'] !== null ? autolinker.link(feature.properties['name:tr'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:tok'] !== null ? autolinker.link(feature.properties['name:tok'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:to'] !== null ? autolinker.link(feature.properties['name:to'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:tl'] !== null ? autolinker.link(feature.properties['name:tl'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:tk'] !== null ? autolinker.link(feature.properties['name:tk'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ti'] !== null ? autolinker.link(feature.properties['name:ti'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:th'] !== null ? autolinker.link(feature.properties['name:th'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:tg'] !== null ? autolinker.link(feature.properties['name:tg'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:te'] !== null ? autolinker.link(feature.properties['name:te'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ta'] !== null ? autolinker.link(feature.properties['name:ta'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:szl'] !== null ? autolinker.link(feature.properties['name:szl'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:sw'] !== null ? autolinker.link(feature.properties['name:sw'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:sv'] !== null ? autolinker.link(feature.properties['name:sv'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:su'] !== null ? autolinker.link(feature.properties['name:su'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:stq'] !== null ? autolinker.link(feature.properties['name:stq'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:st'] !== null ? autolinker.link(feature.properties['name:st'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ss'] !== null ? autolinker.link(feature.properties['name:ss'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:srn'] !== null ? autolinker.link(feature.properties['name:srn'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:sr'] !== null ? autolinker.link(feature.properties['name:sr'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:sq'] !== null ? autolinker.link(feature.properties['name:sq'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:so'] !== null ? autolinker.link(feature.properties['name:so'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:sn'] !== null ? autolinker.link(feature.properties['name:sn'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:sms'] !== null ? autolinker.link(feature.properties['name:sms'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:smn'] !== null ? autolinker.link(feature.properties['name:smn'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:sm'] !== null ? autolinker.link(feature.properties['name:sm'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:sl'] !== null ? autolinker.link(feature.properties['name:sl'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:sk'] !== null ? autolinker.link(feature.properties['name:sk'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:si'] !== null ? autolinker.link(feature.properties['name:si'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:sh'] !== null ? autolinker.link(feature.properties['name:sh'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:sg'] !== null ? autolinker.link(feature.properties['name:sg'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:se'] !== null ? autolinker.link(feature.properties['name:se'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:sco'] !== null ? autolinker.link(feature.properties['name:sco'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:scn'] !== null ? autolinker.link(feature.properties['name:scn'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:sc'] !== null ? autolinker.link(feature.properties['name:sc'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:sah'] !== null ? autolinker.link(feature.properties['name:sah'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:sa'] !== null ? autolinker.link(feature.properties['name:sa'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:rw'] !== null ? autolinker.link(feature.properties['name:rw'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:rue'] !== null ? autolinker.link(feature.properties['name:rue'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ru'] !== null ? autolinker.link(feature.properties['name:ru'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:roa-tara'] !== null ? autolinker.link(feature.properties['name:roa-tara'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ro'] !== null ? autolinker.link(feature.properties['name:ro'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:rm'] !== null ? autolinker.link(feature.properties['name:rm'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:qu'] !== null ? autolinker.link(feature.properties['name:qu'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:pt'] !== null ? autolinker.link(feature.properties['name:pt'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ps'] !== null ? autolinker.link(feature.properties['name:ps'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:pnb'] !== null ? autolinker.link(feature.properties['name:pnb'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:pms'] !== null ? autolinker.link(feature.properties['name:pms'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:pl'] !== null ? autolinker.link(feature.properties['name:pl'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:pih'] !== null ? autolinker.link(feature.properties['name:pih'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:pi'] !== null ? autolinker.link(feature.properties['name:pi'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:pap'] !== null ? autolinker.link(feature.properties['name:pap'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:pam'] !== null ? autolinker.link(feature.properties['name:pam'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:pa'] !== null ? autolinker.link(feature.properties['name:pa'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:os'] !== null ? autolinker.link(feature.properties['name:os'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:or'] !== null ? autolinker.link(feature.properties['name:or'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:om'] !== null ? autolinker.link(feature.properties['name:om'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:olo'] !== null ? autolinker.link(feature.properties['name:olo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:oc'] !== null ? autolinker.link(feature.properties['name:oc'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:nv'] !== null ? autolinker.link(feature.properties['name:nv'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:nso'] !== null ? autolinker.link(feature.properties['name:nso'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:nov'] !== null ? autolinker.link(feature.properties['name:nov'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:no'] !== null ? autolinker.link(feature.properties['name:no'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:nn'] !== null ? autolinker.link(feature.properties['name:nn'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:nl'] !== null ? autolinker.link(feature.properties['name:nl'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:new'] !== null ? autolinker.link(feature.properties['name:new'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ne'] !== null ? autolinker.link(feature.properties['name:ne'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:nds'] !== null ? autolinker.link(feature.properties['name:nds'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:nan'] !== null ? autolinker.link(feature.properties['name:nan'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:nah'] !== null ? autolinker.link(feature.properties['name:nah'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:na'] !== null ? autolinker.link(feature.properties['name:na'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:mzn'] !== null ? autolinker.link(feature.properties['name:mzn'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:my'] !== null ? autolinker.link(feature.properties['name:my'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:mt'] !== null ? autolinker.link(feature.properties['name:mt'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ms'] !== null ? autolinker.link(feature.properties['name:ms'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:mrj'] !== null ? autolinker.link(feature.properties['name:mrj'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:mr'] !== null ? autolinker.link(feature.properties['name:mr'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:mn'] !== null ? autolinker.link(feature.properties['name:mn'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ml'] !== null ? autolinker.link(feature.properties['name:ml'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:mk'] !== null ? autolinker.link(feature.properties['name:mk'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:min'] !== null ? autolinker.link(feature.properties['name:min'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:mi'] !== null ? autolinker.link(feature.properties['name:mi'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:mhr'] !== null ? autolinker.link(feature.properties['name:mhr'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:mg'] !== null ? autolinker.link(feature.properties['name:mg'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:mai'] !== null ? autolinker.link(feature.properties['name:mai'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:lzh'] !== null ? autolinker.link(feature.properties['name:lzh'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:lv'] !== null ? autolinker.link(feature.properties['name:lv'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:lt'] !== null ? autolinker.link(feature.properties['name:lt'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:lrc'] !== null ? autolinker.link(feature.properties['name:lrc'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:lo'] !== null ? autolinker.link(feature.properties['name:lo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ln'] !== null ? autolinker.link(feature.properties['name:ln'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:lmo'] !== null ? autolinker.link(feature.properties['name:lmo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:lij'] !== null ? autolinker.link(feature.properties['name:lij'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:li'] !== null ? autolinker.link(feature.properties['name:li'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:lg'] !== null ? autolinker.link(feature.properties['name:lg'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:lez'] !== null ? autolinker.link(feature.properties['name:lez'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:lb'] !== null ? autolinker.link(feature.properties['name:lb'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:lad'] !== null ? autolinker.link(feature.properties['name:lad'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:la'] !== null ? autolinker.link(feature.properties['name:la'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ky'] !== null ? autolinker.link(feature.properties['name:ky'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:kw'] !== null ? autolinker.link(feature.properties['name:kw'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:kv'] !== null ? autolinker.link(feature.properties['name:kv'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ku'] !== null ? autolinker.link(feature.properties['name:ku'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ksh'] !== null ? autolinker.link(feature.properties['name:ksh'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ks'] !== null ? autolinker.link(feature.properties['name:ks'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:koi'] !== null ? autolinker.link(feature.properties['name:koi'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ko'] !== null ? autolinker.link(feature.properties['name:ko'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:kn'] !== null ? autolinker.link(feature.properties['name:kn'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:km'] !== null ? autolinker.link(feature.properties['name:km'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:kk'] !== null ? autolinker.link(feature.properties['name:kk'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ki'] !== null ? autolinker.link(feature.properties['name:ki'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:kg'] !== null ? autolinker.link(feature.properties['name:kg'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:kbp'] !== null ? autolinker.link(feature.properties['name:kbp'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:kab'] !== null ? autolinker.link(feature.properties['name:kab'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:kaa'] !== null ? autolinker.link(feature.properties['name:kaa'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ka'] !== null ? autolinker.link(feature.properties['name:ka'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:jv'] !== null ? autolinker.link(feature.properties['name:jv'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:jbo'] !== null ? autolinker.link(feature.properties['name:jbo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:jam'] !== null ? autolinker.link(feature.properties['name:jam'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ja'] !== null ? autolinker.link(feature.properties['name:ja'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:it'] !== null ? autolinker.link(feature.properties['name:it'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:is'] !== null ? autolinker.link(feature.properties['name:is'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:io'] !== null ? autolinker.link(feature.properties['name:io'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ilo'] !== null ? autolinker.link(feature.properties['name:ilo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ig'] !== null ? autolinker.link(feature.properties['name:ig'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ie'] !== null ? autolinker.link(feature.properties['name:ie'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:id'] !== null ? autolinker.link(feature.properties['name:id'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ia'] !== null ? autolinker.link(feature.properties['name:ia'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:hy'] !== null ? autolinker.link(feature.properties['name:hy'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:hu'] !== null ? autolinker.link(feature.properties['name:hu'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ht'] !== null ? autolinker.link(feature.properties['name:ht'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:hsb'] !== null ? autolinker.link(feature.properties['name:hsb'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:hr'] !== null ? autolinker.link(feature.properties['name:hr'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:hif'] !== null ? autolinker.link(feature.properties['name:hif'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:hi'] !== null ? autolinker.link(feature.properties['name:hi'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:he'] !== null ? autolinker.link(feature.properties['name:he'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:haw'] !== null ? autolinker.link(feature.properties['name:haw'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:hak'] !== null ? autolinker.link(feature.properties['name:hak'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ha'] !== null ? autolinker.link(feature.properties['name:ha'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:gv'] !== null ? autolinker.link(feature.properties['name:gv'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:gu'] !== null ? autolinker.link(feature.properties['name:gu'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:gom'] !== null ? autolinker.link(feature.properties['name:gom'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:gn'] !== null ? autolinker.link(feature.properties['name:gn'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:gl'] !== null ? autolinker.link(feature.properties['name:gl'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:gd'] !== null ? autolinker.link(feature.properties['name:gd'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:gan'] !== null ? autolinker.link(feature.properties['name:gan'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:gag'] !== null ? autolinker.link(feature.properties['name:gag'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ga'] !== null ? autolinker.link(feature.properties['name:ga'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:fy'] !== null ? autolinker.link(feature.properties['name:fy'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:fur'] !== null ? autolinker.link(feature.properties['name:fur'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:frr'] !== null ? autolinker.link(feature.properties['name:frr'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:frp'] !== null ? autolinker.link(feature.properties['name:frp'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:fr'] !== null ? autolinker.link(feature.properties['name:fr'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:fo'] !== null ? autolinker.link(feature.properties['name:fo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:fi'] !== null ? autolinker.link(feature.properties['name:fi'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:fa'] !== null ? autolinker.link(feature.properties['name:fa'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ext'] !== null ? autolinker.link(feature.properties['name:ext'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:eu'] !== null ? autolinker.link(feature.properties['name:eu'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:et'] !== null ? autolinker.link(feature.properties['name:et'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:es'] !== null ? autolinker.link(feature.properties['name:es'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:eo'] !== null ? autolinker.link(feature.properties['name:eo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:en'] !== null ? autolinker.link(feature.properties['name:en'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:el'] !== null ? autolinker.link(feature.properties['name:el'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ee'] !== null ? autolinker.link(feature.properties['name:ee'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:dz'] !== null ? autolinker.link(feature.properties['name:dz'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:dv'] !== null ? autolinker.link(feature.properties['name:dv'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:dty'] !== null ? autolinker.link(feature.properties['name:dty'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:dsb'] !== null ? autolinker.link(feature.properties['name:dsb'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:diq'] !== null ? autolinker.link(feature.properties['name:diq'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:din'] !== null ? autolinker.link(feature.properties['name:din'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:de'] !== null ? autolinker.link(feature.properties['name:de'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:da'] !== null ? autolinker.link(feature.properties['name:da'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:cy'] !== null ? autolinker.link(feature.properties['name:cy'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:cv'] !== null ? autolinker.link(feature.properties['name:cv'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:cu'] !== null ? autolinker.link(feature.properties['name:cu'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:cs'] !== null ? autolinker.link(feature.properties['name:cs'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:crh'] !== null ? autolinker.link(feature.properties['name:crh'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ckb'] !== null ? autolinker.link(feature.properties['name:ckb'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:chr'] !== null ? autolinker.link(feature.properties['name:chr'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ceb'] !== null ? autolinker.link(feature.properties['name:ceb'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ce'] !== null ? autolinker.link(feature.properties['name:ce'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:cdo'] !== null ? autolinker.link(feature.properties['name:cdo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:cbk-zam'] !== null ? autolinker.link(feature.properties['name:cbk-zam'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ca'] !== null ? autolinker.link(feature.properties['name:ca'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:bxr'] !== null ? autolinker.link(feature.properties['name:bxr'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:bs'] !== null ? autolinker.link(feature.properties['name:bs'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:br'] !== null ? autolinker.link(feature.properties['name:br'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:bpy'] !== null ? autolinker.link(feature.properties['name:bpy'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:bo'] !== null ? autolinker.link(feature.properties['name:bo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:bn'] !== null ? autolinker.link(feature.properties['name:bn'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:bm'] !== null ? autolinker.link(feature.properties['name:bm'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:bjn'] !== null ? autolinker.link(feature.properties['name:bjn'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:bh'] !== null ? autolinker.link(feature.properties['name:bh'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:bg'] !== null ? autolinker.link(feature.properties['name:bg'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:be-tarask'] !== null ? autolinker.link(feature.properties['name:be-tarask'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:be'] !== null ? autolinker.link(feature.properties['name:be'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:bcl'] !== null ? autolinker.link(feature.properties['name:bcl'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:bat-smg'] !== null ? autolinker.link(feature.properties['name:bat-smg'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:bar'] !== null ? autolinker.link(feature.properties['name:bar'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ba'] !== null ? autolinker.link(feature.properties['name:ba'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:azb'] !== null ? autolinker.link(feature.properties['name:azb'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:az'] !== null ? autolinker.link(feature.properties['name:az'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:av'] !== null ? autolinker.link(feature.properties['name:av'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ast'] !== null ? autolinker.link(feature.properties['name:ast'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:arz'] !== null ? autolinker.link(feature.properties['name:arz'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:arc'] !== null ? autolinker.link(feature.properties['name:arc'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ar'] !== null ? autolinker.link(feature.properties['name:ar'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ang'] !== null ? autolinker.link(feature.properties['name:ang'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:an'] !== null ? autolinker.link(feature.properties['name:an'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:am'] !== null ? autolinker.link(feature.properties['name:am'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:als'] !== null ? autolinker.link(feature.properties['name:als'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ak'] !== null ? autolinker.link(feature.properties['name:ak'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:af'] !== null ? autolinker.link(feature.properties['name:af'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ady'] !== null ? autolinker.link(feature.properties['name:ady'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:ace'] !== null ? autolinker.link(feature.properties['name:ace'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name:aa'] !== null ? autolinker.link(feature.properties['name:aa'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['is_in:continent'] !== null ? autolinker.link(feature.properties['is_in:continent'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['int_name'] !== null ? autolinker.link(feature.properties['int_name'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['flag'] !== null ? autolinker.link(feature.properties['flag'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['default_language'] !== null ? autolinker.link(feature.properties['default_language'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['alt_name:war'] !== null ? autolinker.link(feature.properties['alt_name:war'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['alt_name:vi'] !== null ? autolinker.link(feature.properties['alt_name:vi'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['alt_name:tr'] !== null ? autolinker.link(feature.properties['alt_name:tr'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['alt_name:scn'] !== null ? autolinker.link(feature.properties['alt_name:scn'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['alt_name:koi'] !== null ? autolinker.link(feature.properties['alt_name:koi'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['alt_name:hak'] !== null ? autolinker.link(feature.properties['alt_name:hak'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['alt_name:gd'] !== null ? autolinker.link(feature.properties['alt_name:gd'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['alt_name:eo'] !== null ? autolinker.link(feature.properties['alt_name:eo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['alt_name:ceb'] !== null ? autolinker.link(feature.properties['alt_name:ceb'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['alt_name:bo'] !== null ? autolinker.link(feature.properties['alt_name:bo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['alt_name:arc'] !== null ? autolinker.link(feature.properties['alt_name:arc'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['alt_name:ar'] !== null ? autolinker.link(feature.properties['alt_name:ar'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['alt_name:ang'] !== null ? autolinker.link(feature.properties['alt_name:ang'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['admin_level'] !== null ? autolinker.link(feature.properties['admin_level'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ISO3166-1:numeric'] !== null ? autolinker.link(feature.properties['ISO3166-1:numeric'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ISO3166-1:alpha3'] !== null ? autolinker.link(feature.properties['ISO3166-1:alpha3'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ISO3166-1:alpha2'] !== null ? autolinker.link(feature.properties['ISO3166-1:alpha2'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ISO3166-1'] !== null ? autolinker.link(feature.properties['ISO3166-1'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Rock Type'] !== null ? autolinker.link(feature.properties['Rock Type'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Boundarylineapproximate_1_0() {
-            return {
-                pane: 'pane_Boundarylineapproximate_1',
+        function style_GeologcalMap_1_0(feature) {
+            switch(String(feature.properties['Rock Type'])) {
+                case 'Quaternary volcanic rocks':
+                    return {
+                pane: 'pane_GeologcalMap_1',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-                interactive: true,
-            }
-        }
-        map.createPane('pane_Boundarylineapproximate_1');
-        map.getPane('pane_Boundarylineapproximate_1').style.zIndex = 401;
-        map.getPane('pane_Boundarylineapproximate_1').style['mix-blend-mode'] = 'normal';
-        var layer_Boundarylineapproximate_1 = new L.geoJson(json_Boundarylineapproximate_1, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_Boundarylineapproximate_1',
-            layerName: 'layer_Boundarylineapproximate_1',
-            pane: 'pane_Boundarylineapproximate_1',
-            onEachFeature: pop_Boundarylineapproximate_1,
-            style: style_Boundarylineapproximate_1_0,
-        });
-        bounds_group.addLayer(layer_Boundarylineapproximate_1);
-        map.addLayer(layer_Boundarylineapproximate_1);
-        function pop_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">Group Name</th>\
-                        <td>' + (feature.properties['Group Name'] !== null ? autolinker.link(feature.properties['Group Name'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2_0() {
-            return {
-                pane: 'pane_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.5)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(230,214,177,1.0)',
+                fillColor: 'rgba(172,225,74,0.5)',
                 interactive: true,
             }
-        }
-        map.createPane('pane_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2');
-        map.getPane('pane_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2').style.zIndex = 402;
-        map.getPane('pane_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2').style['mix-blend-mode'] = 'normal';
-        var layer_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2 = new L.geoJson(json_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2',
-            layerName: 'layer_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2',
-            pane: 'pane_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2',
-            onEachFeature: pop_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2,
-            style: style_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2_0,
-        });
-        bounds_group.addLayer(layer_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2);
-        map.addLayer(layer_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2);
-        function pop_MesozoicMarineSedimentaryRocks_3(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">Group Name</th>\
-                        <td>' + (feature.properties['Group Name'] !== null ? autolinker.link(feature.properties['Group Name'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_MesozoicMarineSedimentaryRocks_3_0() {
-            return {
-                pane: 'pane_MesozoicMarineSedimentaryRocks_3',
+                    break;
+                case 'Quaternary sediments':
+                    return {
+                pane: 'pane_GeologcalMap_1',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.5)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(106,164,216,1.0)',
+                fillColor: 'rgba(250,253,171,0.5)',
                 interactive: true,
             }
-        }
-        map.createPane('pane_MesozoicMarineSedimentaryRocks_3');
-        map.getPane('pane_MesozoicMarineSedimentaryRocks_3').style.zIndex = 403;
-        map.getPane('pane_MesozoicMarineSedimentaryRocks_3').style['mix-blend-mode'] = 'normal';
-        var layer_MesozoicMarineSedimentaryRocks_3 = new L.geoJson(json_MesozoicMarineSedimentaryRocks_3, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_MesozoicMarineSedimentaryRocks_3',
-            layerName: 'layer_MesozoicMarineSedimentaryRocks_3',
-            pane: 'pane_MesozoicMarineSedimentaryRocks_3',
-            onEachFeature: pop_MesozoicMarineSedimentaryRocks_3,
-            style: style_MesozoicMarineSedimentaryRocks_3_0,
-        });
-        bounds_group.addLayer(layer_MesozoicMarineSedimentaryRocks_3);
-        map.addLayer(layer_MesozoicMarineSedimentaryRocks_3);
-        function pop_OligoceneMioceneVolcanicRocksandAssociatedSediments_4(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">Group Name</th>\
-                        <td>' + (feature.properties['Group Name'] !== null ? autolinker.link(feature.properties['Group Name'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_OligoceneMioceneVolcanicRocksandAssociatedSediments_4_0() {
-            return {
-                pane: 'pane_OligoceneMioceneVolcanicRocksandAssociatedSediments_4',
+                    break;
+                case 'Oligocene - Eocene volcanic rocks and associated sediments':
+                    return {
+                pane: 'pane_GeologcalMap_1',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.5)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(87,205,45,1.0)',
+                fillColor: 'rgba(41,199,24,0.5)',
                 interactive: true,
             }
-        }
-        map.createPane('pane_OligoceneMioceneVolcanicRocksandAssociatedSediments_4');
-        map.getPane('pane_OligoceneMioceneVolcanicRocksandAssociatedSediments_4').style.zIndex = 404;
-        map.getPane('pane_OligoceneMioceneVolcanicRocksandAssociatedSediments_4').style['mix-blend-mode'] = 'normal';
-        var layer_OligoceneMioceneVolcanicRocksandAssociatedSediments_4 = new L.geoJson(json_OligoceneMioceneVolcanicRocksandAssociatedSediments_4, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_OligoceneMioceneVolcanicRocksandAssociatedSediments_4',
-            layerName: 'layer_OligoceneMioceneVolcanicRocksandAssociatedSediments_4',
-            pane: 'pane_OligoceneMioceneVolcanicRocksandAssociatedSediments_4',
-            onEachFeature: pop_OligoceneMioceneVolcanicRocksandAssociatedSediments_4,
-            style: style_OligoceneMioceneVolcanicRocksandAssociatedSediments_4_0,
-        });
-        bounds_group.addLayer(layer_OligoceneMioceneVolcanicRocksandAssociatedSediments_4);
-        map.addLayer(layer_OligoceneMioceneVolcanicRocksandAssociatedSediments_4);
-        function pop_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">Group Name</th>\
-                        <td>' + (feature.properties['Group Name'] !== null ? autolinker.link(feature.properties['Group Name'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5_0() {
-            return {
-                pane: 'pane_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5',
+                    break;
+                case 'Eocene Sediments':
+                    return {
+                pane: 'pane_GeologcalMap_1',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.5)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(195,202,60,1.0)',
+                fillColor: 'rgba(242,199,131,0.5)',
                 interactive: true,
             }
-        }
-        map.createPane('pane_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5');
-        map.getPane('pane_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5').style.zIndex = 405;
-        map.getPane('pane_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5').style['mix-blend-mode'] = 'normal';
-        var layer_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5 = new L.geoJson(json_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5',
-            layerName: 'layer_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5',
-            pane: 'pane_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5',
-            onEachFeature: pop_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5,
-            style: style_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5_0,
-        });
-        bounds_group.addLayer(layer_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5);
-        map.addLayer(layer_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5);
-        function pop_EocenetoRecentSediments_6(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">Group Name</th>\
-                        <td>' + (feature.properties['Group Name'] !== null ? autolinker.link(feature.properties['Group Name'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_EocenetoRecentSediments_6_0() {
-            return {
-                pane: 'pane_EocenetoRecentSediments_6',
+                    break;
+                case 'Cretaceous - Jurassic sediments':
+                    return {
+                pane: 'pane_GeologcalMap_1',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.5)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(250,253,171,0.8666666666666667)',
+                fillColor: 'rgba(131,229,255,0.5)',
                 interactive: true,
             }
-        }
-        map.createPane('pane_EocenetoRecentSediments_6');
-        map.getPane('pane_EocenetoRecentSediments_6').style.zIndex = 406;
-        map.getPane('pane_EocenetoRecentSediments_6').style['mix-blend-mode'] = 'normal';
-        var layer_EocenetoRecentSediments_6 = new L.geoJson(json_EocenetoRecentSediments_6, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_EocenetoRecentSediments_6',
-            layerName: 'layer_EocenetoRecentSediments_6',
-            pane: 'pane_EocenetoRecentSediments_6',
-            onEachFeature: pop_EocenetoRecentSediments_6,
-            style: style_EocenetoRecentSediments_6_0,
-        });
-        bounds_group.addLayer(layer_EocenetoRecentSediments_6);
-        map.addLayer(layer_EocenetoRecentSediments_6);
-        function pop_LakesandReservoirs_7(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">Name:</th>\
-                        <td>' + (feature.properties['name_en'] !== null ? autolinker.link(feature.properties['name_en'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_LakesandReservoirs_7_0() {
-            return {
-                pane: 'pane_LakesandReservoirs_7',
+                    break;
+                case 'Paleozoic rocks':
+                    return {
+                pane: 'pane_GeologcalMap_1',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(35,35,35,0.5)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(199,249,243,1.0)',
+                fillColor: 'rgba(233,123,28,0.5)',
                 interactive: true,
             }
+                    break;
+                case 'Precambrian metamorphic and intrusive rocks':
+                    return {
+                pane: 'pane_GeologcalMap_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.5)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(230,214,177,0.5)',
+                interactive: true,
+            }
+                    break;
+            }
         }
-        map.createPane('pane_LakesandReservoirs_7');
-        map.getPane('pane_LakesandReservoirs_7').style.zIndex = 407;
-        map.getPane('pane_LakesandReservoirs_7').style['mix-blend-mode'] = 'normal';
-        var layer_LakesandReservoirs_7 = new L.geoJson(json_LakesandReservoirs_7, {
+        map.createPane('pane_GeologcalMap_1');
+        map.getPane('pane_GeologcalMap_1').style.zIndex = 401;
+        map.getPane('pane_GeologcalMap_1').style['mix-blend-mode'] = 'normal';
+        var layer_GeologcalMap_1 = new L.geoJson(json_GeologcalMap_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_LakesandReservoirs_7',
-            layerName: 'layer_LakesandReservoirs_7',
-            pane: 'pane_LakesandReservoirs_7',
-            onEachFeature: pop_LakesandReservoirs_7,
-            style: style_LakesandReservoirs_7_0,
+            dataVar: 'json_GeologcalMap_1',
+            layerName: 'layer_GeologcalMap_1',
+            pane: 'pane_GeologcalMap_1',
+            onEachFeature: pop_GeologcalMap_1,
+            style: style_GeologcalMap_1_0,
         });
-        bounds_group.addLayer(layer_LakesandReservoirs_7);
-        map.addLayer(layer_LakesandReservoirs_7);
-        function pop_Minorenergyresources_8(feature, layer) {
+        bounds_group.addLayer(layer_GeologcalMap_1);
+        map.addLayer(layer_GeologcalMap_1);
+        function pop_Minorenergyresources_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -1341,11 +291,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Minorenergyresources_8_0(feature) {
+        function style_Minorenergyresources_2_0(feature) {
             switch(String(feature.properties['Commodity'])) {
                 case 'Geothermal energy':
                     return {
-                pane: 'pane_Minorenergyresources_8',
+                pane: 'pane_Minorenergyresources_2',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
@@ -1361,7 +311,7 @@
                     break;
                 case 'Lignite':
                     return {
-                pane: 'pane_Minorenergyresources_8',
+                pane: 'pane_Minorenergyresources_2',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
@@ -1377,7 +327,7 @@
                     break;
                 case 'Oil & natural gas':
                     return {
-                pane: 'pane_Minorenergyresources_8',
+                pane: 'pane_Minorenergyresources_2',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
@@ -1393,7 +343,7 @@
                     break;
                 case 'Uranium':
                     return {
-                pane: 'pane_Minorenergyresources_8',
+                pane: 'pane_Minorenergyresources_2',
                 radius: 6.0,
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
@@ -1409,27 +359,27 @@
                     break;
             }
         }
-        map.createPane('pane_Minorenergyresources_8');
-        map.getPane('pane_Minorenergyresources_8').style.zIndex = 408;
-        map.getPane('pane_Minorenergyresources_8').style['mix-blend-mode'] = 'normal';
-        var layer_Minorenergyresources_8 = new L.geoJson(json_Minorenergyresources_8, {
+        map.createPane('pane_Minorenergyresources_2');
+        map.getPane('pane_Minorenergyresources_2').style.zIndex = 402;
+        map.getPane('pane_Minorenergyresources_2').style['mix-blend-mode'] = 'normal';
+        var layer_Minorenergyresources_2 = new L.geoJson(json_Minorenergyresources_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Minorenergyresources_8',
-            layerName: 'layer_Minorenergyresources_8',
-            pane: 'pane_Minorenergyresources_8',
-            onEachFeature: pop_Minorenergyresources_8,
+            dataVar: 'json_Minorenergyresources_2',
+            layerName: 'layer_Minorenergyresources_2',
+            pane: 'pane_Minorenergyresources_2',
+            onEachFeature: pop_Minorenergyresources_2,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Minorenergyresources_8_0(feature));
+                return L.circleMarker(latlng, style_Minorenergyresources_2_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Minorenergyresources_8);
-        map.addLayer(layer_Minorenergyresources_8);
-        function pop_Minorindustrialmineralresources_9(feature, layer) {
+        bounds_group.addLayer(layer_Minorenergyresources_2);
+        map.addLayer(layer_Minorenergyresources_2);
+        function pop_Minorindustrialmineralresources_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -1474,11 +424,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Minorindustrialmineralresources_9_0(feature) {
+        function style_Minorindustrialmineralresources_3_0(feature) {
             switch(String(feature.properties['Commodity'])) {
                 case 'Asbestos':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1495,7 +445,7 @@
                     break;
                 case 'Barite':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1512,7 +462,7 @@
                     break;
                 case 'Common clay':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1529,7 +479,7 @@
                     break;
                 case 'Common Salt':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1546,7 +496,7 @@
                     break;
                 case 'Diatomite':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1563,7 +513,7 @@
                     break;
                 case 'Dolomite':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1580,7 +530,7 @@
                     break;
                 case 'Feldspar':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1597,7 +547,7 @@
                     break;
                 case 'Granite':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1614,7 +564,7 @@
                     break;
                 case 'Graphite':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1631,7 +581,7 @@
                     break;
                 case 'Gypsum':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1648,7 +598,7 @@
                     break;
                 case 'Kaolin':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1665,7 +615,7 @@
                     break;
                 case 'Limestone':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1682,7 +632,7 @@
                     break;
                 case 'Marble':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1699,7 +649,7 @@
                     break;
                 case 'Mica':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1716,7 +666,7 @@
                     break;
                 case 'Olivine':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1733,7 +683,7 @@
                     break;
                 case 'Phosphate':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1750,7 +700,7 @@
                     break;
                 case 'Pozzolana':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1767,7 +717,7 @@
                     break;
                 case 'Quartz':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1784,7 +734,7 @@
                     break;
                 case 'Silica sand':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1801,7 +751,7 @@
                     break;
                 case 'Soda ash':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1818,7 +768,7 @@
                     break;
                 case 'Sulfur':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1835,7 +785,7 @@
                     break;
                 case 'Talc':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1852,7 +802,7 @@
                     break;
                 case 'Travertine':
                     return {
-                pane: 'pane_Minorindustrialmineralresources_9',
+                pane: 'pane_Minorindustrialmineralresources_3',
                 shape: 'triangle',
                 radius: 5.6,
                 opacity: 1,
@@ -1869,27 +819,27 @@
                     break;
             }
         }
-        map.createPane('pane_Minorindustrialmineralresources_9');
-        map.getPane('pane_Minorindustrialmineralresources_9').style.zIndex = 409;
-        map.getPane('pane_Minorindustrialmineralresources_9').style['mix-blend-mode'] = 'normal';
-        var layer_Minorindustrialmineralresources_9 = new L.geoJson(json_Minorindustrialmineralresources_9, {
+        map.createPane('pane_Minorindustrialmineralresources_3');
+        map.getPane('pane_Minorindustrialmineralresources_3').style.zIndex = 403;
+        map.getPane('pane_Minorindustrialmineralresources_3').style['mix-blend-mode'] = 'normal';
+        var layer_Minorindustrialmineralresources_3 = new L.geoJson(json_Minorindustrialmineralresources_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Minorindustrialmineralresources_9',
-            layerName: 'layer_Minorindustrialmineralresources_9',
-            pane: 'pane_Minorindustrialmineralresources_9',
-            onEachFeature: pop_Minorindustrialmineralresources_9,
+            dataVar: 'json_Minorindustrialmineralresources_3',
+            layerName: 'layer_Minorindustrialmineralresources_3',
+            pane: 'pane_Minorindustrialmineralresources_3',
+            onEachFeature: pop_Minorindustrialmineralresources_3,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_Minorindustrialmineralresources_9_0(feature));
+                return L.shapeMarker(latlng, style_Minorindustrialmineralresources_3_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Minorindustrialmineralresources_9);
-        map.addLayer(layer_Minorindustrialmineralresources_9);
-        function pop_Minormetallicmineralresources_10(feature, layer) {
+        bounds_group.addLayer(layer_Minorindustrialmineralresources_3);
+        map.addLayer(layer_Minorindustrialmineralresources_3);
+        function pop_Minormetallicmineralresources_4(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -1938,11 +888,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Minormetallicmineralresources_10_0(feature) {
+        function style_Minormetallicmineralresources_4_0(feature) {
             switch(String(feature.properties['Commodity'])) {
                 case 'Au':
                     return {
-                pane: 'pane_Minormetallicmineralresources_10',
+                pane: 'pane_Minormetallicmineralresources_4',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1959,7 +909,7 @@
                     break;
                 case 'Berilium':
                     return {
-                pane: 'pane_Minormetallicmineralresources_10',
+                pane: 'pane_Minormetallicmineralresources_4',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1976,7 +926,7 @@
                     break;
                 case 'Chromite':
                     return {
-                pane: 'pane_Minormetallicmineralresources_10',
+                pane: 'pane_Minormetallicmineralresources_4',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -1993,7 +943,7 @@
                     break;
                 case 'Cobalt':
                     return {
-                pane: 'pane_Minormetallicmineralresources_10',
+                pane: 'pane_Minormetallicmineralresources_4',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -2010,7 +960,7 @@
                     break;
                 case 'Copper':
                     return {
-                pane: 'pane_Minormetallicmineralresources_10',
+                pane: 'pane_Minormetallicmineralresources_4',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -2027,7 +977,7 @@
                     break;
                 case 'Gold':
                     return {
-                pane: 'pane_Minormetallicmineralresources_10',
+                pane: 'pane_Minormetallicmineralresources_4',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -2044,7 +994,7 @@
                     break;
                 case 'Iron ore':
                     return {
-                pane: 'pane_Minormetallicmineralresources_10',
+                pane: 'pane_Minormetallicmineralresources_4',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -2061,7 +1011,7 @@
                     break;
                 case 'Lead':
                     return {
-                pane: 'pane_Minormetallicmineralresources_10',
+                pane: 'pane_Minormetallicmineralresources_4',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -2078,7 +1028,7 @@
                     break;
                 case 'Manganese':
                     return {
-                pane: 'pane_Minormetallicmineralresources_10',
+                pane: 'pane_Minormetallicmineralresources_4',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -2095,7 +1045,7 @@
                     break;
                 case 'Molibdenite':
                     return {
-                pane: 'pane_Minormetallicmineralresources_10',
+                pane: 'pane_Minormetallicmineralresources_4',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -2112,7 +1062,7 @@
                     break;
                 case 'Nickel':
                     return {
-                pane: 'pane_Minormetallicmineralresources_10',
+                pane: 'pane_Minormetallicmineralresources_4',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -2129,7 +1079,7 @@
                     break;
                 case 'Niobium':
                     return {
-                pane: 'pane_Minormetallicmineralresources_10',
+                pane: 'pane_Minormetallicmineralresources_4',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -2146,7 +1096,7 @@
                     break;
                 case 'Platinum':
                     return {
-                pane: 'pane_Minormetallicmineralresources_10',
+                pane: 'pane_Minormetallicmineralresources_4',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -2163,7 +1113,7 @@
                     break;
                 case 'Pyrite':
                     return {
-                pane: 'pane_Minormetallicmineralresources_10',
+                pane: 'pane_Minormetallicmineralresources_4',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -2180,7 +1130,7 @@
                     break;
                 case 'Silver':
                     return {
-                pane: 'pane_Minormetallicmineralresources_10',
+                pane: 'pane_Minormetallicmineralresources_4',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -2197,7 +1147,7 @@
                     break;
                 case 'Titanium':
                     return {
-                pane: 'pane_Minormetallicmineralresources_10',
+                pane: 'pane_Minormetallicmineralresources_4',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -2214,7 +1164,7 @@
                     break;
                 case 'Tungsten':
                     return {
-                pane: 'pane_Minormetallicmineralresources_10',
+                pane: 'pane_Minormetallicmineralresources_4',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -2231,7 +1181,7 @@
                     break;
                 case 'Zinc':
                     return {
-                pane: 'pane_Minormetallicmineralresources_10',
+                pane: 'pane_Minormetallicmineralresources_4',
                 shape: 'diamond',
                 radius: 5.6,
                 opacity: 1,
@@ -2248,144 +1198,27 @@
                     break;
             }
         }
-        map.createPane('pane_Minormetallicmineralresources_10');
-        map.getPane('pane_Minormetallicmineralresources_10').style.zIndex = 410;
-        map.getPane('pane_Minormetallicmineralresources_10').style['mix-blend-mode'] = 'normal';
-        var layer_Minormetallicmineralresources_10 = new L.geoJson(json_Minormetallicmineralresources_10, {
+        map.createPane('pane_Minormetallicmineralresources_4');
+        map.getPane('pane_Minormetallicmineralresources_4').style.zIndex = 404;
+        map.getPane('pane_Minormetallicmineralresources_4').style['mix-blend-mode'] = 'normal';
+        var layer_Minormetallicmineralresources_4 = new L.geoJson(json_Minormetallicmineralresources_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Minormetallicmineralresources_10',
-            layerName: 'layer_Minormetallicmineralresources_10',
-            pane: 'pane_Minormetallicmineralresources_10',
-            onEachFeature: pop_Minormetallicmineralresources_10,
+            dataVar: 'json_Minormetallicmineralresources_4',
+            layerName: 'layer_Minormetallicmineralresources_4',
+            pane: 'pane_Minormetallicmineralresources_4',
+            onEachFeature: pop_Minormetallicmineralresources_4,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_Minormetallicmineralresources_10_0(feature));
+                return L.shapeMarker(latlng, style_Minormetallicmineralresources_4_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Minormetallicmineralresources_10);
-        map.addLayer(layer_Minormetallicmineralresources_10);
-        function pop_MajorEnergyResources_11(feature, layer) {
-            layer.on({
-                mouseout: function(e) {
-                    for (i in e.target._eventParents) {
-                        e.target._eventParents[i].resetStyle(e.target);
-                    }
-                    if (typeof layer.closePopup == 'function') {
-                        layer.closePopup();
-                    } else {
-                        layer.eachLayer(function(feature){
-                            feature.closePopup()
-                        });
-                    }
-                },
-                mouseover: highlightFeature,
-            });
-            var popupContent = '<table>\
-                    <tr>\
-                        <th scope="row">Deposit name</th>\
-                        <td>' + (feature.properties['Deposit name'] !== null ? autolinker.link(feature.properties['Deposit name'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Commodity</th>\
-                        <td>' + (feature.properties['Commodity'] !== null ? autolinker.link(feature.properties['Commodity'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Class</th>\
-                        <td>' + (feature.properties['Class'] !== null ? autolinker.link(feature.properties['Class'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Resource</th>\
-                        <td>' + (feature.properties['Resource'] !== null ? autolinker.link(feature.properties['Resource'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Units</th>\
-                        <td>' + (feature.properties['Units'] !== null ? autolinker.link(feature.properties['Units'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Additional</th>\
-                        <td>' + (feature.properties['Additional'] !== null ? autolinker.link(feature.properties['Additional'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Longitude</th>\
-                        <td>' + (feature.properties['Longitude'] !== null ? autolinker.link(feature.properties['Longitude'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Latitude</th>\
-                        <td>' + (feature.properties['Latitude'] !== null ? autolinker.link(feature.properties['Latitude'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Status</th>\
-                        <td>' + (feature.properties['Status'] !== null ? autolinker.link(feature.properties['Status'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Ore deposit types</th>\
-                        <td>' + (feature.properties['Ore deposit types'] !== null ? autolinker.link(feature.properties['Ore deposit types'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
-        }
-
-        function style_MajorEnergyResources_11_0(feature) {
-            switch(String(feature.properties['q2wHide_Name'])) {
-                case 'Geothermal energy':
-                    return {
-                pane: 'pane_MajorEnergyResources_11',
-                radius: 8.0,
-                opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 2.0,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(26,133,214,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Natural gas':
-                    return {
-                pane: 'pane_MajorEnergyResources_11',
-                radius: 8.0,
-                opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 2.0,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(239,82,168,1.0)',
-                interactive: true,
-            }
-                    break;
-            }
-        }
-        map.createPane('pane_MajorEnergyResources_11');
-        map.getPane('pane_MajorEnergyResources_11').style.zIndex = 411;
-        map.getPane('pane_MajorEnergyResources_11').style['mix-blend-mode'] = 'normal';
-        var layer_MajorEnergyResources_11 = new L.geoJson(json_MajorEnergyResources_11, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_MajorEnergyResources_11',
-            layerName: 'layer_MajorEnergyResources_11',
-            pane: 'pane_MajorEnergyResources_11',
-            onEachFeature: pop_MajorEnergyResources_11,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_MajorEnergyResources_11_0(feature));
-            },
-        });
-        bounds_group.addLayer(layer_MajorEnergyResources_11);
-        map.addLayer(layer_MajorEnergyResources_11);
-        function pop_MajorIndustrialmineraldeposits_12(feature, layer) {
+        bounds_group.addLayer(layer_Minormetallicmineralresources_4);
+        map.addLayer(layer_Minormetallicmineralresources_4);
+        function pop_MajorIndustrialmineraldeposits_5(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -2446,11 +1279,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_MajorIndustrialmineraldeposits_12_0(feature) {
+        function style_MajorIndustrialmineraldeposits_5_0(feature) {
             switch(String(feature.properties['Commodity'])) {
                 case 'Bentonite':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_12',
+                pane: 'pane_MajorIndustrialmineraldeposits_5',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2467,7 +1300,7 @@
                     break;
                 case 'Common clay':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_12',
+                pane: 'pane_MajorIndustrialmineraldeposits_5',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2484,7 +1317,7 @@
                     break;
                 case 'Diatomite':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_12',
+                pane: 'pane_MajorIndustrialmineraldeposits_5',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2501,7 +1334,7 @@
                     break;
                 case 'Gem stones':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_12',
+                pane: 'pane_MajorIndustrialmineraldeposits_5',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2518,7 +1351,7 @@
                     break;
                 case 'Granite':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_12',
+                pane: 'pane_MajorIndustrialmineraldeposits_5',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2535,7 +1368,7 @@
                     break;
                 case 'Graphite':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_12',
+                pane: 'pane_MajorIndustrialmineraldeposits_5',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2552,7 +1385,7 @@
                     break;
                 case 'Gypsum':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_12',
+                pane: 'pane_MajorIndustrialmineraldeposits_5',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2569,7 +1402,7 @@
                     break;
                 case 'Kyanite':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_12',
+                pane: 'pane_MajorIndustrialmineraldeposits_5',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2586,7 +1419,7 @@
                     break;
                 case 'Limestone':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_12',
+                pane: 'pane_MajorIndustrialmineraldeposits_5',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2603,7 +1436,7 @@
                     break;
                 case 'Marble':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_12',
+                pane: 'pane_MajorIndustrialmineraldeposits_5',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2620,7 +1453,7 @@
                     break;
                 case 'Potash':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_12',
+                pane: 'pane_MajorIndustrialmineraldeposits_5',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2637,7 +1470,7 @@
                     break;
                 case 'Quartz':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_12',
+                pane: 'pane_MajorIndustrialmineraldeposits_5',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2654,7 +1487,7 @@
                     break;
                 case 'Salt':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_12',
+                pane: 'pane_MajorIndustrialmineraldeposits_5',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2671,7 +1504,7 @@
                     break;
                 case 'Silica sand':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_12',
+                pane: 'pane_MajorIndustrialmineraldeposits_5',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2688,7 +1521,7 @@
                     break;
                 case 'Soda ash':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_12',
+                pane: 'pane_MajorIndustrialmineraldeposits_5',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2705,7 +1538,7 @@
                     break;
                 case 'Sulfur':
                     return {
-                pane: 'pane_MajorIndustrialmineraldeposits_12',
+                pane: 'pane_MajorIndustrialmineraldeposits_5',
                 shape: 'triangle',
                 radius: 8.0,
                 opacity: 1,
@@ -2722,27 +1555,144 @@
                     break;
             }
         }
-        map.createPane('pane_MajorIndustrialmineraldeposits_12');
-        map.getPane('pane_MajorIndustrialmineraldeposits_12').style.zIndex = 412;
-        map.getPane('pane_MajorIndustrialmineraldeposits_12').style['mix-blend-mode'] = 'normal';
-        var layer_MajorIndustrialmineraldeposits_12 = new L.geoJson(json_MajorIndustrialmineraldeposits_12, {
+        map.createPane('pane_MajorIndustrialmineraldeposits_5');
+        map.getPane('pane_MajorIndustrialmineraldeposits_5').style.zIndex = 405;
+        map.getPane('pane_MajorIndustrialmineraldeposits_5').style['mix-blend-mode'] = 'normal';
+        var layer_MajorIndustrialmineraldeposits_5 = new L.geoJson(json_MajorIndustrialmineraldeposits_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_MajorIndustrialmineraldeposits_12',
-            layerName: 'layer_MajorIndustrialmineraldeposits_12',
-            pane: 'pane_MajorIndustrialmineraldeposits_12',
-            onEachFeature: pop_MajorIndustrialmineraldeposits_12,
+            dataVar: 'json_MajorIndustrialmineraldeposits_5',
+            layerName: 'layer_MajorIndustrialmineraldeposits_5',
+            pane: 'pane_MajorIndustrialmineraldeposits_5',
+            onEachFeature: pop_MajorIndustrialmineraldeposits_5,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_MajorIndustrialmineraldeposits_12_0(feature));
+                return L.shapeMarker(latlng, style_MajorIndustrialmineraldeposits_5_0(feature));
             },
         });
-        bounds_group.addLayer(layer_MajorIndustrialmineraldeposits_12);
-        map.addLayer(layer_MajorIndustrialmineraldeposits_12);
-        function pop_Majormetallicmineraldeposits_13(feature, layer) {
+        bounds_group.addLayer(layer_MajorIndustrialmineraldeposits_5);
+        map.addLayer(layer_MajorIndustrialmineraldeposits_5);
+        function pop_MajorEnergyResources_6(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Deposit name</th>\
+                        <td>' + (feature.properties['Deposit name'] !== null ? autolinker.link(feature.properties['Deposit name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Commodity</th>\
+                        <td>' + (feature.properties['Commodity'] !== null ? autolinker.link(feature.properties['Commodity'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Class</th>\
+                        <td>' + (feature.properties['Class'] !== null ? autolinker.link(feature.properties['Class'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Resource</th>\
+                        <td>' + (feature.properties['Resource'] !== null ? autolinker.link(feature.properties['Resource'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Units</th>\
+                        <td>' + (feature.properties['Units'] !== null ? autolinker.link(feature.properties['Units'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Additional</th>\
+                        <td>' + (feature.properties['Additional'] !== null ? autolinker.link(feature.properties['Additional'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Longitude</th>\
+                        <td>' + (feature.properties['Longitude'] !== null ? autolinker.link(feature.properties['Longitude'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Latitude</th>\
+                        <td>' + (feature.properties['Latitude'] !== null ? autolinker.link(feature.properties['Latitude'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Status</th>\
+                        <td>' + (feature.properties['Status'] !== null ? autolinker.link(feature.properties['Status'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Ore deposit types</th>\
+                        <td>' + (feature.properties['Ore deposit types'] !== null ? autolinker.link(feature.properties['Ore deposit types'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_MajorEnergyResources_6_0(feature) {
+            switch(String(feature.properties['q2wHide_Name'])) {
+                case 'Geothermal energy':
+                    return {
+                pane: 'pane_MajorEnergyResources_6',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(26,133,214,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Natural gas':
+                    return {
+                pane: 'pane_MajorEnergyResources_6',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(239,82,168,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_MajorEnergyResources_6');
+        map.getPane('pane_MajorEnergyResources_6').style.zIndex = 406;
+        map.getPane('pane_MajorEnergyResources_6').style['mix-blend-mode'] = 'normal';
+        var layer_MajorEnergyResources_6 = new L.geoJson(json_MajorEnergyResources_6, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_MajorEnergyResources_6',
+            layerName: 'layer_MajorEnergyResources_6',
+            pane: 'pane_MajorEnergyResources_6',
+            onEachFeature: pop_MajorEnergyResources_6,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_MajorEnergyResources_6_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_MajorEnergyResources_6);
+        map.addLayer(layer_MajorEnergyResources_6);
+        function pop_Majormetallicmineraldeposits_7(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -2803,11 +1753,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Majormetallicmineraldeposits_13_0(feature) {
+        function style_Majormetallicmineraldeposits_7_0(feature) {
             switch(String(feature.properties['Commodity'])) {
                 case 'Gold':
                     return {
-                pane: 'pane_Majormetallicmineraldeposits_13',
+                pane: 'pane_Majormetallicmineraldeposits_7',
                 shape: 'diamond',
                 radius: 9.2,
                 opacity: 1,
@@ -2824,7 +1774,7 @@
                     break;
                 case 'Iron ore':
                     return {
-                pane: 'pane_Majormetallicmineraldeposits_13',
+                pane: 'pane_Majormetallicmineraldeposits_7',
                 shape: 'diamond',
                 radius: 9.2,
                 opacity: 1,
@@ -2841,7 +1791,7 @@
                     break;
                 case 'Manganese':
                     return {
-                pane: 'pane_Majormetallicmineraldeposits_13',
+                pane: 'pane_Majormetallicmineraldeposits_7',
                 shape: 'diamond',
                 radius: 9.2,
                 opacity: 1,
@@ -2858,7 +1808,7 @@
                     break;
                 case 'Nickel':
                     return {
-                pane: 'pane_Majormetallicmineraldeposits_13',
+                pane: 'pane_Majormetallicmineraldeposits_7',
                 shape: 'diamond',
                 radius: 9.2,
                 opacity: 1,
@@ -2875,7 +1825,7 @@
                     break;
                 case 'Platinum':
                     return {
-                pane: 'pane_Majormetallicmineraldeposits_13',
+                pane: 'pane_Majormetallicmineraldeposits_7',
                 shape: 'diamond',
                 radius: 9.2,
                 opacity: 1,
@@ -2892,7 +1842,7 @@
                     break;
                 case 'Silver':
                     return {
-                pane: 'pane_Majormetallicmineraldeposits_13',
+                pane: 'pane_Majormetallicmineraldeposits_7',
                 shape: 'diamond',
                 radius: 9.2,
                 opacity: 1,
@@ -2909,7 +1859,7 @@
                     break;
                 case 'Tantalum':
                     return {
-                pane: 'pane_Majormetallicmineraldeposits_13',
+                pane: 'pane_Majormetallicmineraldeposits_7',
                 shape: 'diamond',
                 radius: 9.2,
                 opacity: 1,
@@ -2926,26 +1876,26 @@
                     break;
             }
         }
-        map.createPane('pane_Majormetallicmineraldeposits_13');
-        map.getPane('pane_Majormetallicmineraldeposits_13').style.zIndex = 413;
-        map.getPane('pane_Majormetallicmineraldeposits_13').style['mix-blend-mode'] = 'normal';
-        var layer_Majormetallicmineraldeposits_13 = new L.geoJson(json_Majormetallicmineraldeposits_13, {
+        map.createPane('pane_Majormetallicmineraldeposits_7');
+        map.getPane('pane_Majormetallicmineraldeposits_7').style.zIndex = 407;
+        map.getPane('pane_Majormetallicmineraldeposits_7').style['mix-blend-mode'] = 'normal';
+        var layer_Majormetallicmineraldeposits_7 = new L.geoJson(json_Majormetallicmineraldeposits_7, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Majormetallicmineraldeposits_13',
-            layerName: 'layer_Majormetallicmineraldeposits_13',
-            pane: 'pane_Majormetallicmineraldeposits_13',
-            onEachFeature: pop_Majormetallicmineraldeposits_13,
+            dataVar: 'json_Majormetallicmineraldeposits_7',
+            layerName: 'layer_Majormetallicmineraldeposits_7',
+            pane: 'pane_Majormetallicmineraldeposits_7',
+            onEachFeature: pop_Majormetallicmineraldeposits_7,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_Majormetallicmineraldeposits_13_0(feature));
+                return L.shapeMarker(latlng, style_Majormetallicmineraldeposits_7_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Majormetallicmineraldeposits_13);
-        map.addLayer(layer_Majormetallicmineraldeposits_13);
+        bounds_group.addLayer(layer_Majormetallicmineraldeposits_7);
+        map.addLayer(layer_Majormetallicmineraldeposits_7);
             var title = new L.Control();
             title.onAdd = function (map) {
                 this._div = L.DomUtil.create('div', 'info');
@@ -2988,7 +1938,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'Major metallic mineral deposits<br /><table><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_13_Gold0.png" /></td><td>Gold</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_13_Ironore1.png" /></td><td>Iron ore</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_13_Manganese2.png" /></td><td>Manganese</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_13_Nickel3.png" /></td><td>Nickel</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_13_Platinum4.png" /></td><td>Platinum</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_13_Silver5.png" /></td><td>Silver</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_13_Tantalum6.png" /></td><td>Tantalum</td></tr></table>': layer_Majormetallicmineraldeposits_13,'Major Industrial mineral deposits<br /><table><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Bentonite0.png" /></td><td>Bentonite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Commonclay1.png" /></td><td>Common clay</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Diatomite2.png" /></td><td>Diatomite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Gemstones3.png" /></td><td>Gem stones</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Granite4.png" /></td><td>Granite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Graphite5.png" /></td><td>Graphite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Gypsum6.png" /></td><td>Gypsum</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Kyanite7.png" /></td><td>Kyanite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Limestone8.png" /></td><td>Limestone</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Marble9.png" /></td><td>Marble</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Potash10.png" /></td><td>Potash</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Quartz11.png" /></td><td>Quartz</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Salt12.png" /></td><td>Salt</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Silicasand13.png" /></td><td>Silica sand</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Sodaash14.png" /></td><td>Soda ash</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_12_Sulfur15.png" /></td><td>Sulfur</td></tr></table>': layer_MajorIndustrialmineraldeposits_12,'Major Energy Resources<br /><table><tr><td style="text-align: center;"><img src="legend/MajorEnergyResources_11_Geothermalenergy0.png" /></td><td>Geothermal energy</td></tr><tr><td style="text-align: center;"><img src="legend/MajorEnergyResources_11_Naturalgas1.png" /></td><td>Natural gas</td></tr></table>': layer_MajorEnergyResources_11,'Minor metallic mineral resources<br /><table><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Au0.png" /></td><td>Au</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Berilium1.png" /></td><td>Berilium</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Chromite2.png" /></td><td>Chromite</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Cobalt3.png" /></td><td>Cobalt</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Copper4.png" /></td><td>Copper</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Gold5.png" /></td><td>Gold</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Ironore6.png" /></td><td>Iron ore</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Lead7.png" /></td><td>Lead</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Manganese8.png" /></td><td>Manganese</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Molibdenite9.png" /></td><td>Molibdenite</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Nickel10.png" /></td><td>Nickel</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Niobium11.png" /></td><td>Niobium</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Platinum12.png" /></td><td>Platinum</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Pyrite13.png" /></td><td>Pyrite</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Silver14.png" /></td><td>Silver</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Titanium15.png" /></td><td>Titanium</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Tungsten16.png" /></td><td>Tungsten</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_10_Zinc17.png" /></td><td>Zinc</td></tr></table>': layer_Minormetallicmineralresources_10,'Minor - industrial-mineral-resources<br /><table><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Asbestos0.png" /></td><td>Asbestos</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Barite1.png" /></td><td>Barite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Commonclay2.png" /></td><td>Common clay</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_CommonSalt3.png" /></td><td>Common Salt</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Diatomite4.png" /></td><td>Diatomite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Dolomite5.png" /></td><td>Dolomite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Feldspar6.png" /></td><td>Feldspar</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Granite7.png" /></td><td>Granite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Graphite8.png" /></td><td>Graphite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Gypsum9.png" /></td><td>Gypsum</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Kaolin10.png" /></td><td>Kaolin</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Limestone11.png" /></td><td>Limestone</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Marble12.png" /></td><td>Marble</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Mica13.png" /></td><td>Mica</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Olivine14.png" /></td><td>Olivine</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Phosphate15.png" /></td><td>Phosphate</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Pozzolana16.png" /></td><td>Pozzolana</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Quartz17.png" /></td><td>Quartz</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Silicasand18.png" /></td><td>Silica sand</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Sodaash19.png" /></td><td>Soda ash</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Sulfur20.png" /></td><td>Sulfur</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Talc21.png" /></td><td>Talc</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_9_Travertine22.png" /></td><td>Travertine</td></tr></table>': layer_Minorindustrialmineralresources_9,'Minor - energy resources<br /><table><tr><td style="text-align: center;"><img src="legend/Minorenergyresources_8_Geothermalenergy0.png" /></td><td>Geothermal energy</td></tr><tr><td style="text-align: center;"><img src="legend/Minorenergyresources_8_Lignite1.png" /></td><td>Lignite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorenergyresources_8_Oilnaturalgas2.png" /></td><td>Oil & natural gas</td></tr><tr><td style="text-align: center;"><img src="legend/Minorenergyresources_8_Uranium3.png" /></td><td>Uranium</td></tr></table>': layer_Minorenergyresources_8,'<img src="legend/LakesandReservoirs_7.png" /> Lakes and Reservoirs': layer_LakesandReservoirs_7,'<img src="legend/EocenetoRecentSediments_6.png" /> Eocene to Recent Sediments': layer_EocenetoRecentSediments_6,'<img src="legend/MioceneQuaternaryVolcanicRocksandAssociatedSediments_5.png" /> Miocene - Quaternary Volcanic Rocks and Associated Sediments': layer_MioceneQuaternaryVolcanicRocksandAssociatedSediments_5,'<img src="legend/OligoceneMioceneVolcanicRocksandAssociatedSediments_4.png" /> Oligocene - Miocene Volcanic Rocks and Associated Sediments': layer_OligoceneMioceneVolcanicRocksandAssociatedSediments_4,'<img src="legend/MesozoicMarineSedimentaryRocks_3.png" /> Mesozoic Marine Sedimentary Rocks': layer_MesozoicMarineSedimentaryRocks_3,'<img src="legend/PrecambrianMetamorphicandAssociatedIntrusiveRocks_2.png" /> Precambrian Metamorphic and Associated Intrusive Rocks': layer_PrecambrianMetamorphicandAssociatedIntrusiveRocks_2,'<img src="legend/Boundarylineapproximate_1.png" /> Boundary line (approximate)': layer_Boundarylineapproximate_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
+        L.control.layers(baseMaps,{'Major metallic mineral deposits<br /><table><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_7_Gold0.png" /></td><td>Gold</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_7_Ironore1.png" /></td><td>Iron ore</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_7_Manganese2.png" /></td><td>Manganese</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_7_Nickel3.png" /></td><td>Nickel</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_7_Platinum4.png" /></td><td>Platinum</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_7_Silver5.png" /></td><td>Silver</td></tr><tr><td style="text-align: center;"><img src="legend/Majormetallicmineraldeposits_7_Tantalum6.png" /></td><td>Tantalum</td></tr></table>': layer_Majormetallicmineraldeposits_7,'Major Energy Resources<br /><table><tr><td style="text-align: center;"><img src="legend/MajorEnergyResources_6_Geothermalenergy0.png" /></td><td>Geothermal energy</td></tr><tr><td style="text-align: center;"><img src="legend/MajorEnergyResources_6_Naturalgas1.png" /></td><td>Natural gas</td></tr></table>': layer_MajorEnergyResources_6,'Major Industrial mineral deposits<br /><table><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_5_Bentonite0.png" /></td><td>Bentonite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_5_Commonclay1.png" /></td><td>Common clay</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_5_Diatomite2.png" /></td><td>Diatomite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_5_Gemstones3.png" /></td><td>Gem stones</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_5_Granite4.png" /></td><td>Granite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_5_Graphite5.png" /></td><td>Graphite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_5_Gypsum6.png" /></td><td>Gypsum</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_5_Kyanite7.png" /></td><td>Kyanite</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_5_Limestone8.png" /></td><td>Limestone</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_5_Marble9.png" /></td><td>Marble</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_5_Potash10.png" /></td><td>Potash</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_5_Quartz11.png" /></td><td>Quartz</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_5_Salt12.png" /></td><td>Salt</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_5_Silicasand13.png" /></td><td>Silica sand</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_5_Sodaash14.png" /></td><td>Soda ash</td></tr><tr><td style="text-align: center;"><img src="legend/MajorIndustrialmineraldeposits_5_Sulfur15.png" /></td><td>Sulfur</td></tr></table>': layer_MajorIndustrialmineraldeposits_5,'Minor metallic mineral resources<br /><table><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Au0.png" /></td><td>Au</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Berilium1.png" /></td><td>Berilium</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Chromite2.png" /></td><td>Chromite</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Cobalt3.png" /></td><td>Cobalt</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Copper4.png" /></td><td>Copper</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Gold5.png" /></td><td>Gold</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Ironore6.png" /></td><td>Iron ore</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Lead7.png" /></td><td>Lead</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Manganese8.png" /></td><td>Manganese</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Molibdenite9.png" /></td><td>Molibdenite</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Nickel10.png" /></td><td>Nickel</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Niobium11.png" /></td><td>Niobium</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Platinum12.png" /></td><td>Platinum</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Pyrite13.png" /></td><td>Pyrite</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Silver14.png" /></td><td>Silver</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Titanium15.png" /></td><td>Titanium</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Tungsten16.png" /></td><td>Tungsten</td></tr><tr><td style="text-align: center;"><img src="legend/Minormetallicmineralresources_4_Zinc17.png" /></td><td>Zinc</td></tr></table>': layer_Minormetallicmineralresources_4,'Minor - industrial-mineral-resources<br /><table><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Asbestos0.png" /></td><td>Asbestos</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Barite1.png" /></td><td>Barite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Commonclay2.png" /></td><td>Common clay</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_CommonSalt3.png" /></td><td>Common Salt</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Diatomite4.png" /></td><td>Diatomite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Dolomite5.png" /></td><td>Dolomite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Feldspar6.png" /></td><td>Feldspar</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Granite7.png" /></td><td>Granite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Graphite8.png" /></td><td>Graphite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Gypsum9.png" /></td><td>Gypsum</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Kaolin10.png" /></td><td>Kaolin</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Limestone11.png" /></td><td>Limestone</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Marble12.png" /></td><td>Marble</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Mica13.png" /></td><td>Mica</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Olivine14.png" /></td><td>Olivine</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Phosphate15.png" /></td><td>Phosphate</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Pozzolana16.png" /></td><td>Pozzolana</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Quartz17.png" /></td><td>Quartz</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Silicasand18.png" /></td><td>Silica sand</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Sodaash19.png" /></td><td>Soda ash</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Sulfur20.png" /></td><td>Sulfur</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Talc21.png" /></td><td>Talc</td></tr><tr><td style="text-align: center;"><img src="legend/Minorindustrialmineralresources_3_Travertine22.png" /></td><td>Travertine</td></tr></table>': layer_Minorindustrialmineralresources_3,'Minor - energy resources<br /><table><tr><td style="text-align: center;"><img src="legend/Minorenergyresources_2_Geothermalenergy0.png" /></td><td>Geothermal energy</td></tr><tr><td style="text-align: center;"><img src="legend/Minorenergyresources_2_Lignite1.png" /></td><td>Lignite</td></tr><tr><td style="text-align: center;"><img src="legend/Minorenergyresources_2_Oilnaturalgas2.png" /></td><td>Oil & natural gas</td></tr><tr><td style="text-align: center;"><img src="legend/Minorenergyresources_2_Uranium3.png" /></td><td>Uranium</td></tr></table>': layer_Minorenergyresources_2,'Geologcal Map<br /><table><tr><td style="text-align: center;"><img src="legend/GeologcalMap_1_Quaternaryvolcanicrocks0.png" /></td><td>Quaternary volcanic rocks</td></tr><tr><td style="text-align: center;"><img src="legend/GeologcalMap_1_Quaternarysediments1.png" /></td><td>Quaternary sediments</td></tr><tr><td style="text-align: center;"><img src="legend/GeologcalMap_1_OligoceneEocenevolcanicrocksandassociatedsediments2.png" /></td><td>Oligocene - Eocene volcanic rocks and associated sediments</td></tr><tr><td style="text-align: center;"><img src="legend/GeologcalMap_1_EoceneSediments3.png" /></td><td>Eocene Sediments</td></tr><tr><td style="text-align: center;"><img src="legend/GeologcalMap_1_CretaceousJurassicsediments4.png" /></td><td>Cretaceous - Jurassic sediments</td></tr><tr><td style="text-align: center;"><img src="legend/GeologcalMap_1_Paleozoicrocks5.png" /></td><td>Paleozoic rocks</td></tr><tr><td style="text-align: center;"><img src="legend/GeologcalMap_1_Precambrianmetamorphicandintrusiverocks6.png" /></td><td>Precambrian metamorphic and intrusive rocks</td></tr></table>': layer_GeologcalMap_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
         setBounds();
         </script>
     </body>
